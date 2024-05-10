@@ -1,0 +1,8 @@
+/Users/fozua/Desktop/GameServer/build/CMakeFiles/server_main.dir
+/Users/fozua/Desktop/GameServer/build/CMakeFiles/client_main.dir
+/Users/fozua/Desktop/GameServer/build/CMakeFiles/edit_cache.dir
+/Users/fozua/Desktop/GameServer/build/CMakeFiles/rebuild_cache.dir
+/Users/fozua/Desktop/GameServer/build/src/CMakeFiles/server.dir
+/Users/fozua/Desktop/GameServer/build/src/CMakeFiles/client.dir
+/Users/fozua/Desktop/GameServer/build/src/CMakeFiles/edit_cache.dir
+/Users/fozua/Desktop/GameServer/build/src/CMakeFiles/rebuild_cache.dir

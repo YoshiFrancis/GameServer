@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libserver.a CMakeFiles/server.dir/connection.cpp.o CMakeFiles/server.dir/room.cpp.o CMakeFiles/server.dir/server.cpp.o CMakeFiles/server.dir/message.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libserver.a
