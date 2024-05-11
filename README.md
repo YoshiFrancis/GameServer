@@ -16,3 +16,18 @@ Each lobby will hold a particular game. For example, if a player wishes to make 
 ## Overall
 
 One Server --> One Hub --> to many lobbies (each player can only be in one lobby at a time).
+
+
+
+
+
+
+## TODO
+1. settup the infrastucture code for the server->hub->lobby->app system
+2. implement hub functionality
+	- give user list of options: create new game lobby, view all game lobbies, join game lobby, prompt user for username
+3. implement lobby functionality
+	- get player to join, let player leave back to lobby, able to restart lobby (like when game ends), start game, end game, close lobby
+	- could potentially let other players spectate ongoing game in the future
+4. Implement applications
+	- this is basically the end game. After 1-3, I will only be operating indivdually on the applications, which should be generall separated from the networking side. After 1-3, most of the networking side of the application is finished
