@@ -13,6 +13,7 @@ public:
     Connection(tcp::socket socket, Room& room);
     void start();
     void deliver(message msg);
+		void joinRoom(Room& room);
 
 private:
     tcp::socket socket_;

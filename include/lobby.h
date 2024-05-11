@@ -2,13 +2,32 @@
 #include "hub.h"
 #include "application.h"
 
-class Lobby : public Room
+/*
+inherits from room:
+join
+leave
+deliverall
+deliver
+*/
+
+class lobby : public room
 {
 
+public:
+	std::string getId() const;
+	void join(conn_ptr conn) override;
+	void leave(conn_ptr conn) override;
 
 private:
 	std::set<std::string> usernames_;
 	std::set<conn_ptr> connections_;
-	std::shared_ptr<hub> hub_;
+	Hub& hub_;
 	Application app_;
+	std::string id_;
+	bool hasStarted_ = false;
+	bool isClosed_ = false;
+
+	void startApp();
+	void endApp();
+	void closeLobby();
 }

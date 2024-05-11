@@ -16,6 +16,13 @@ void Connection::start()
   ReadHeader();
 }
 
+void Connection::joinRoom(Room& room)
+{
+	room_.leave(shared_from_this());
+	room.join(shared_from_this());
+	room_ = room;
+}
+
 void Connection::deliver(message msg)
 {
   bool is_curr_writing = !messageQ_.empty();
