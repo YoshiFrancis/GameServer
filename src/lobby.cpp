@@ -1,39 +1,43 @@
 #include "lobby.h"
 #include <string>
+#include <algorithm>
 
-std::string getId() const
+std::string Lobby::getId() const
 {
 	return id_;
 }
 
-void Lobby::join(conn_ptr conn) override
+void Lobby::join(conn_ptr conn) 
 {
 	Room::join(conn);
-	app_.join(conn);
+	app_->join(conn);
+	usernames_.insert(conn->getUsername());
 }
 
-void Lobby::leave(conn_ptr conn) override
+void Lobby::leave(conn_ptr conn) 
 {
 	Room::leave(conn);
-	conn.joinRoom(hub_);
+	conn->changeRoom(std::make_shared<Room>(hub_));
 	connections_.erase(conn);
-	app_.leave(conn);
+	app_->leave(conn);
 }
 
 void Lobby::startApp()
 {
-	app_.start();
+	app_->start();
 	hasStarted_ = true;
 }
 
 void Lobby::endApp()
 {
-	deliverAll("Ending game");
-	std::for_each(connections_.begin(), connections_.end(), [](conn_ptr conn) { leave(conn); };
+	message msg { "Ending game"};
+	deliverAll(msg);
+	std::for_each(connections_.begin(), connections_.end(), [this](conn_ptr conn) { leave(conn); });
 }
 
 void Lobby::closeLobby()
 {
-	deliverAll("Closing lobby. No one can join.");
+	message msg { "Closing lobby. No one can join anymore." };
+	deliverAll(msg);
 	isClosed_ = true;
 }

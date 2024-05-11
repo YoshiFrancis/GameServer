@@ -12,14 +12,17 @@ class Connection : public std::enable_shared_from_this<Connection>, public Conne
 public:
     Connection(tcp::socket socket, Room& room);
     void start();
-    void deliver(message msg);
+    void deliver(message msg) override;
 		void joinRoom(Room& room);
+		void changeRoom(std::shared_ptr<Room> room) override;
+		std::string getUsername() override;
 
 private:
     tcp::socket socket_;
-    Room& room_;
+    std::shared_ptr<Room> room_;
     std::deque<message> messageQ_;
     message buffer_;
+		std::string username_;
 
     void ReadHeader();
     void ReadBody();

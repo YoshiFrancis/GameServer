@@ -102,12 +102,12 @@ src/clean: src/CMakeFiles/client.dir/clean
 CMakeFiles/server_main.dir/all: src/CMakeFiles/server.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server_main.dir/build.make CMakeFiles/server_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server_main.dir/build.make CMakeFiles/server_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=11,12 "Built target server_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=14,15 "Built target server_main"
 .PHONY : CMakeFiles/server_main.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/server_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/server_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 0
 .PHONY : CMakeFiles/server_main.dir/rule
@@ -154,12 +154,12 @@ CMakeFiles/client_main.dir/clean:
 src/CMakeFiles/server.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=6,7,8,9,10 "Built target server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=6,7,8,9,10,11,12,13 "Built target server"
 .PHONY : src/CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/server.dir/rule

@@ -1,27 +1,38 @@
 #include "hub.h"
 
-void join(conn_ptr conn) override 
+void Hub::join(conn_ptr conn)  
 {
 	Room::join(conn);
 	lobbiless_conns.insert(conn);
 }
 
-std::shared_ptr<Lobby> Hub::findLobby(std::string id)
+std::shared_ptr<Lobby> Hub::findLobby(std::string id) 
 {
+	std::shared_ptr<Lobby> lobbyIt = nullptr;
+	/*
 	auto lobbyIt = std::find(lobbies_.begin(), lobbies_.end(), 
-		[](Lobby& lobby)
+		[&id](Lobby& lobby)
 		{
 			return lobby.getId() == id;
 		});
-	if (lobbyIt == lobbies_.end())
+	*/
+	for (auto lobby : lobbies_)
+	{
+		if (lobby.getId() == id)
+		{
+			lobbyIt = std::make_shared<Lobby>(lobby);
+			break;
+		}
+	}
+	if (lobbyIt == nullptr)
 		return nullptr;
 	else
-		return std::make_shared<Lobby>(*lobbyIt);
+		return lobbyIt;
 }
 
-void joinLobby(Lobby& lobby, conn_ptr conn)
+void Hub::joinLobby(Lobby& lobby, conn_ptr conn)
 {
-	conn.joinRoom(lobby);
+	conn->changeRoom(std::make_shared<Lobby>(lobby));
 	lobbiless_conns.erase(conn);
 }
 

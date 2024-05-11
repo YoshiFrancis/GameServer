@@ -7,6 +7,10 @@
 class message
 {
 public:
+	message(std::string msg)
+		: data_(msg)
+	{
+	}
   static constexpr std::size_t header_length = 4;
   std::string data_;
 

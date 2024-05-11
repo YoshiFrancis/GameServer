@@ -144,6 +144,30 @@ client/fast:
 	cd /Users/fozua/Desktop/GameServer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/client.dir/build.make src/CMakeFiles/client.dir/build
 .PHONY : client/fast
 
+application.o: application.cpp.o
+.PHONY : application.o
+
+# target to build an object file
+application.cpp.o:
+	cd /Users/fozua/Desktop/GameServer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/application.cpp.o
+.PHONY : application.cpp.o
+
+application.i: application.cpp.i
+.PHONY : application.i
+
+# target to preprocess a source file
+application.cpp.i:
+	cd /Users/fozua/Desktop/GameServer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/application.cpp.i
+.PHONY : application.cpp.i
+
+application.s: application.cpp.s
+.PHONY : application.s
+
+# target to generate assembly for a file
+application.cpp.s:
+	cd /Users/fozua/Desktop/GameServer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/application.cpp.s
+.PHONY : application.cpp.s
+
 client.o: client.cpp.o
 .PHONY : client.o
 
@@ -191,6 +215,54 @@ connection.s: connection.cpp.s
 connection.cpp.s:
 	cd /Users/fozua/Desktop/GameServer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/connection.cpp.s
 .PHONY : connection.cpp.s
+
+hub.o: hub.cpp.o
+.PHONY : hub.o
+
+# target to build an object file
+hub.cpp.o:
+	cd /Users/fozua/Desktop/GameServer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/hub.cpp.o
+.PHONY : hub.cpp.o
+
+hub.i: hub.cpp.i
+.PHONY : hub.i
+
+# target to preprocess a source file
+hub.cpp.i:
+	cd /Users/fozua/Desktop/GameServer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/hub.cpp.i
+.PHONY : hub.cpp.i
+
+hub.s: hub.cpp.s
+.PHONY : hub.s
+
+# target to generate assembly for a file
+hub.cpp.s:
+	cd /Users/fozua/Desktop/GameServer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/hub.cpp.s
+.PHONY : hub.cpp.s
+
+lobby.o: lobby.cpp.o
+.PHONY : lobby.o
+
+# target to build an object file
+lobby.cpp.o:
+	cd /Users/fozua/Desktop/GameServer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/lobby.cpp.o
+.PHONY : lobby.cpp.o
+
+lobby.i: lobby.cpp.i
+.PHONY : lobby.i
+
+# target to preprocess a source file
+lobby.cpp.i:
+	cd /Users/fozua/Desktop/GameServer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/lobby.cpp.i
+.PHONY : lobby.cpp.i
+
+lobby.s: lobby.cpp.s
+.PHONY : lobby.s
+
+# target to generate assembly for a file
+lobby.cpp.s:
+	cd /Users/fozua/Desktop/GameServer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/server.dir/build.make src/CMakeFiles/server.dir/lobby.cpp.s
+.PHONY : lobby.cpp.s
 
 message.o: message.cpp.o
 .PHONY : message.o
@@ -277,12 +349,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... client"
 	@echo "... server"
+	@echo "... application.o"
+	@echo "... application.i"
+	@echo "... application.s"
 	@echo "... client.o"
 	@echo "... client.i"
 	@echo "... client.s"
 	@echo "... connection.o"
 	@echo "... connection.i"
 	@echo "... connection.s"
+	@echo "... hub.o"
+	@echo "... hub.i"
+	@echo "... hub.s"
+	@echo "... lobby.o"
+	@echo "... lobby.i"
+	@echo "... lobby.s"
 	@echo "... message.o"
 	@echo "... message.i"
 	@echo "... message.s"

@@ -11,11 +11,11 @@ typedef std::shared_ptr<ConnectionI> conn_ptr;
 class Room
 {
 public:
-    void join(conn_ptr conn);
-    void leave(conn_ptr conn);
-    void deliverAll(message& msg);
+    virtual void join(conn_ptr conn);
+    virtual void leave(conn_ptr conn);
+    virtual void deliverAll(message& msg);
 
-private:
+protected:
     std::set<conn_ptr> connections_;
 };
 

@@ -125,12 +125,57 @@ src/CMakeFiles/server.dir/message.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/server.dir/message.cpp.s"
 	cd /Users/fozua/Desktop/GameServer/build/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fozua/Desktop/GameServer/src/message.cpp -o CMakeFiles/server.dir/message.cpp.s
 
+src/CMakeFiles/server.dir/hub.cpp.o: src/CMakeFiles/server.dir/flags.make
+src/CMakeFiles/server.dir/hub.cpp.o: /Users/fozua/Desktop/GameServer/src/hub.cpp
+src/CMakeFiles/server.dir/hub.cpp.o: src/CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/server.dir/hub.cpp.o"
+	cd /Users/fozua/Desktop/GameServer/build/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/server.dir/hub.cpp.o -MF CMakeFiles/server.dir/hub.cpp.o.d -o CMakeFiles/server.dir/hub.cpp.o -c /Users/fozua/Desktop/GameServer/src/hub.cpp
+
+src/CMakeFiles/server.dir/hub.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/server.dir/hub.cpp.i"
+	cd /Users/fozua/Desktop/GameServer/build/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fozua/Desktop/GameServer/src/hub.cpp > CMakeFiles/server.dir/hub.cpp.i
+
+src/CMakeFiles/server.dir/hub.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/server.dir/hub.cpp.s"
+	cd /Users/fozua/Desktop/GameServer/build/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fozua/Desktop/GameServer/src/hub.cpp -o CMakeFiles/server.dir/hub.cpp.s
+
+src/CMakeFiles/server.dir/lobby.cpp.o: src/CMakeFiles/server.dir/flags.make
+src/CMakeFiles/server.dir/lobby.cpp.o: /Users/fozua/Desktop/GameServer/src/lobby.cpp
+src/CMakeFiles/server.dir/lobby.cpp.o: src/CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/server.dir/lobby.cpp.o"
+	cd /Users/fozua/Desktop/GameServer/build/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/server.dir/lobby.cpp.o -MF CMakeFiles/server.dir/lobby.cpp.o.d -o CMakeFiles/server.dir/lobby.cpp.o -c /Users/fozua/Desktop/GameServer/src/lobby.cpp
+
+src/CMakeFiles/server.dir/lobby.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/server.dir/lobby.cpp.i"
+	cd /Users/fozua/Desktop/GameServer/build/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fozua/Desktop/GameServer/src/lobby.cpp > CMakeFiles/server.dir/lobby.cpp.i
+
+src/CMakeFiles/server.dir/lobby.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/server.dir/lobby.cpp.s"
+	cd /Users/fozua/Desktop/GameServer/build/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fozua/Desktop/GameServer/src/lobby.cpp -o CMakeFiles/server.dir/lobby.cpp.s
+
+src/CMakeFiles/server.dir/application.cpp.o: src/CMakeFiles/server.dir/flags.make
+src/CMakeFiles/server.dir/application.cpp.o: /Users/fozua/Desktop/GameServer/src/application.cpp
+src/CMakeFiles/server.dir/application.cpp.o: src/CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/server.dir/application.cpp.o"
+	cd /Users/fozua/Desktop/GameServer/build/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/server.dir/application.cpp.o -MF CMakeFiles/server.dir/application.cpp.o.d -o CMakeFiles/server.dir/application.cpp.o -c /Users/fozua/Desktop/GameServer/src/application.cpp
+
+src/CMakeFiles/server.dir/application.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/server.dir/application.cpp.i"
+	cd /Users/fozua/Desktop/GameServer/build/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fozua/Desktop/GameServer/src/application.cpp > CMakeFiles/server.dir/application.cpp.i
+
+src/CMakeFiles/server.dir/application.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/server.dir/application.cpp.s"
+	cd /Users/fozua/Desktop/GameServer/build/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fozua/Desktop/GameServer/src/application.cpp -o CMakeFiles/server.dir/application.cpp.s
+
 # Object files for target server
 server_OBJECTS = \
 "CMakeFiles/server.dir/connection.cpp.o" \
 "CMakeFiles/server.dir/room.cpp.o" \
 "CMakeFiles/server.dir/server.cpp.o" \
-"CMakeFiles/server.dir/message.cpp.o"
+"CMakeFiles/server.dir/message.cpp.o" \
+"CMakeFiles/server.dir/hub.cpp.o" \
+"CMakeFiles/server.dir/lobby.cpp.o" \
+"CMakeFiles/server.dir/application.cpp.o"
 
 # External object files for target server
 server_EXTERNAL_OBJECTS =
@@ -139,9 +184,12 @@ src/libserver.a: src/CMakeFiles/server.dir/connection.cpp.o
 src/libserver.a: src/CMakeFiles/server.dir/room.cpp.o
 src/libserver.a: src/CMakeFiles/server.dir/server.cpp.o
 src/libserver.a: src/CMakeFiles/server.dir/message.cpp.o
+src/libserver.a: src/CMakeFiles/server.dir/hub.cpp.o
+src/libserver.a: src/CMakeFiles/server.dir/lobby.cpp.o
+src/libserver.a: src/CMakeFiles/server.dir/application.cpp.o
 src/libserver.a: src/CMakeFiles/server.dir/build.make
 src/libserver.a: src/CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libserver.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libserver.a"
 	cd /Users/fozua/Desktop/GameServer/build/src && $(CMAKE_COMMAND) -P CMakeFiles/server.dir/cmake_clean_target.cmake
 	cd /Users/fozua/Desktop/GameServer/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
 

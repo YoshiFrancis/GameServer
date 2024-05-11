@@ -1,3 +1,6 @@
+#ifndef HUB_H
+#define HUB_H
+
 #include "room.h"
 #include "lobby.h"
 #include <set>
@@ -12,18 +15,23 @@ deliverAll
 deliver
 */
 
+class Lobby;
+
 class Hub : public Room
 {
 
 public:
-	std::shared_ptr<Lobby> findLobby(std::string id) const;
+	std::shared_ptr<Lobby> findLobby(std::string id);
 	void joinLobby(Lobby& lobby, conn_ptr conn);
+	void join(conn_ptr) override;
 
 private:
 	std::set<std::string> usernames_;
 	std::set<conn_ptr> lobbiless_conns;
-	std::set<conn_ptr> all_conns;
 	std::vector<Lobby> lobbies_;
+	// inherits std::set<conn_ptr> connections_ from room
 
-	bool usernameExist(std::string) const;
-}
+	bool doesUsernameExist(std::string) const;
+};
+
+#endif

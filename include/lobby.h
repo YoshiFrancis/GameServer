@@ -1,6 +1,10 @@
+#ifndef LOBBY_H
+#define LOBBY_H
+
 #include "room.h"
 #include "hub.h"
 #include "application.h"
+#include <memory>
 
 /*
 inherits from room:
@@ -10,8 +14,18 @@ deliverall
 deliver
 */
 
-class lobby : public room
+class Hub;
+class Application;
+
+class Lobby : public Room
 {
+
+public:
+	Lobby(Hub& hub, conn_ptr host)
+		: hub_ { hub }
+	{
+		join(host);
+	}
 
 public:
 	std::string getId() const;
@@ -20,9 +34,9 @@ public:
 
 private:
 	std::set<std::string> usernames_;
-	std::set<conn_ptr> connections_;
+	// std::set<conn_ptr> connections_; -- inherited from Room
 	Hub& hub_;
-	Application app_;
+	std::shared_ptr<Application> app_;
 	std::string id_;
 	bool hasStarted_ = false;
 	bool isClosed_ = false;
@@ -30,4 +44,6 @@ private:
 	void startApp();
 	void endApp();
 	void closeLobby();
-}
+};
+
+#endif
