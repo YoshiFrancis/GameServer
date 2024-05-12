@@ -24,3 +24,9 @@ void Room::deliverAll(message& msg)
         conn->deliver(msg);
     }
 }
+
+void Room::handleMessage(message& msg, conn_ptr conn)
+{
+	if (msg.getFlag() == 'M')
+		deliverAll(msg);
+}

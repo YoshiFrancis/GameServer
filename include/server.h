@@ -2,7 +2,7 @@
 #define SERVER_HPP
 
 #include "asio.hpp"
-#include "room.h"
+#include "hub.h"
 
 using asio::ip::tcp;
 
@@ -14,7 +14,7 @@ public:
 
 private:
     tcp::acceptor acceptor_;
-    Room room_;
+    Hub hub_;
 };
 
 #endif // SERVER_HPP

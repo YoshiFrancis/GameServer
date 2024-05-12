@@ -1267,11 +1267,14 @@ src/CMakeFiles/server.dir/server.cpp.o: \
   /Users/fozua/Documents/ASIO/asio-1.30.2/include/asio/writable_pipe.hpp \
   /Users/fozua/Documents/ASIO/asio-1.30.2/include/asio/write_at.hpp \
   /Users/fozua/Documents/ASIO/asio-1.30.2/include/asio/impl/write_at.hpp \
+  /Users/fozua/Desktop/GameServer/include/hub.h \
   /Users/fozua/Desktop/GameServer/include/room.h \
   /Users/fozua/Desktop/GameServer/include/ConnectionI.hpp \
   /Users/fozua/Desktop/GameServer/include/message.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/set \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__tree \
+  /Users/fozua/Desktop/GameServer/include/lobby.h \
+  /Users/fozua/Desktop/GameServer/include/application.h \
   /Users/fozua/Desktop/GameServer/include/connection.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/deque \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/iostream

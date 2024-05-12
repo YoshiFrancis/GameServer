@@ -62,7 +62,7 @@ void Connection::ReadBody()
       if (!ec)
       {
           std::cout << buffer_.data_ << "\n";
-          room_->deliverAll(buffer_);
+          room_->handleMessage(buffer_, shared_from_this());
           ReadHeader();
       } 
       else
@@ -98,4 +98,19 @@ void Connection::Write()
 std::string Connection::getUsername()
 {
 	return username_;
+}
+
+void Connection::setUsername(std::string username)
+{
+	username_ = username;
+}
+
+void Connection::setPrompt(std::string prompt)
+{
+	curr_prompt_ = prompt;
+}
+
+bool Connection::isPrompt(std::string prompt)
+{
+	return prompt == curr_prompt_;
 }

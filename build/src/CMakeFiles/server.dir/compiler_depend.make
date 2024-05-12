@@ -5812,7 +5812,10 @@ src/CMakeFiles/server.dir/server.cpp.o: /Users/fozua/Desktop/GameServer/src/serv
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stdint.h \
   /Users/fozua/Desktop/GameServer/include/ConnectionI.hpp \
+  /Users/fozua/Desktop/GameServer/include/application.h \
   /Users/fozua/Desktop/GameServer/include/connection.h \
+  /Users/fozua/Desktop/GameServer/include/hub.h \
+  /Users/fozua/Desktop/GameServer/include/lobby.h \
   /Users/fozua/Desktop/GameServer/include/message.hpp \
   /Users/fozua/Desktop/GameServer/include/room.h \
   /Users/fozua/Desktop/GameServer/include/server.h \

@@ -41,6 +41,16 @@ void message::body_length(std::size_t new_length)
   data_.resize(header_length + body_length_);
 }
 
+char message::getFlag()
+{
+	return flag_;
+}
+
+char message::getFlag() const
+{
+	return flag_;
+}
+
 void message::decode_header()
 {
   std::string header = data_.substr(0, 4);

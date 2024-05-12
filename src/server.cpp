@@ -16,7 +16,7 @@ void Server::Accept()
         if (!ec)
         {
             std::cout << "Successful connection!\n";
-            std::make_shared<Connection>(std::move(socket), room_)->start();
+            std::make_shared<Connection>(std::move(socket), hub_)->start();
             Accept();
         }
     });

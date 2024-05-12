@@ -1267,9 +1267,12 @@ CMakeFiles/server_main.dir/server_main.cpp.o: \
   /Users/fozua/Documents/ASIO/asio-1.30.2/include/asio/write_at.hpp \
   /Users/fozua/Documents/ASIO/asio-1.30.2/include/asio/impl/write_at.hpp \
   /Users/fozua/Desktop/GameServer/include/server.h \
+  /Users/fozua/Desktop/GameServer/include/hub.h \
   /Users/fozua/Desktop/GameServer/include/room.h \
   /Users/fozua/Desktop/GameServer/include/ConnectionI.hpp \
   /Users/fozua/Desktop/GameServer/include/message.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/set \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__tree \
+  /Users/fozua/Desktop/GameServer/include/lobby.h \
+  /Users/fozua/Desktop/GameServer/include/application.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/iostream

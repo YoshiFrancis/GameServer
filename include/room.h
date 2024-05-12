@@ -14,6 +14,7 @@ public:
     virtual void join(conn_ptr conn);
     virtual void leave(conn_ptr conn);
     virtual void deliverAll(message& msg);
+		virtual void handleMessage(message& msg, conn_ptr conn);
 
 protected:
     std::set<conn_ptr> connections_;
