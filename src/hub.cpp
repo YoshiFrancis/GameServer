@@ -1,9 +1,11 @@
 #include "hub.h"
+#include <iostream>
 
 static void handleResponse(message& msg, conn_ptr conn);
 
 void Hub::join(conn_ptr conn)  
 {
+	std::cout << "Connection has joined hub!\n";
 	Room::join(conn);
 	lobbiless_conns.insert(conn);
 }
@@ -40,7 +42,7 @@ std::shared_ptr<Lobby> Hub::findLobby(std::string id)
 
 void Hub::joinLobby(Lobby& lobby, conn_ptr conn)
 {
-	conn->changeRoom(std::make_shared<Lobby>(lobby));
+	conn->changeRoom(lobby);
 	lobbiless_conns.erase(conn);
 }
 
@@ -62,6 +64,7 @@ void Hub::promptConnUsername(conn_ptr conn)
 
 void Hub::handleMessage(message& msg, conn_ptr conn)
 {
+	std::cout << "Hub is handling!\n";
 	if (msg.getFlag() == 'M')
 	{
 		deliverAll(msg);

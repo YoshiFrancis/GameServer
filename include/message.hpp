@@ -29,7 +29,7 @@ public:
 
 private:
   std::size_t body_length_;
-	char flag_;
+	char flag_ = 'M';
 };
 
 #endif // MESSAGE_HPP

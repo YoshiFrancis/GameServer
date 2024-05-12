@@ -17,7 +17,7 @@ void Lobby::join(conn_ptr conn)
 void Lobby::leave(conn_ptr conn) 
 {
 	Room::leave(conn);
-	conn->changeRoom(std::make_shared<Room>(hub_));
+	conn->changeRoom(hub_);
 	connections_.erase(conn);
 	app_->leave(conn);
 }

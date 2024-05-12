@@ -27,6 +27,7 @@ void Room::deliverAll(message& msg)
 
 void Room::handleMessage(message& msg, conn_ptr conn)
 {
+	std::cout << msg.getFlag() << "\n";
 	if (msg.getFlag() == 'M')
 		deliverAll(msg);
 }

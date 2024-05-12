@@ -14,7 +14,7 @@ public:
     void start();
     void deliver(message msg) override;
 		void joinRoom(Room& room);
-		void changeRoom(std::shared_ptr<Room> room) override;
+		void changeRoom(Room& room) override;
 		std::string getUsername() override;
 		void setUsername(std::string) override;
 		void setPrompt(std::string prompt) override;
@@ -22,7 +22,7 @@ public:
 
 private:
     tcp::socket socket_;
-    std::shared_ptr<Room> room_;
+    Room& room_;
     std::deque<message> messageQ_;
     message buffer_;
 		std::string username_;
