@@ -31,3 +31,8 @@ One Server --> One Hub --> to many lobbies (each player can only be in one lobby
 	- could potentially let other players spectate ongoing game in the future
 4. Implement applications
 	- this is basically the end game. After 1-3, I will only be operating indivdually on the applications, which should be generall separated from the networking side. After 1-3, most of the networking side of the application is finished
+
+
+
+	## CURRENT WORK
+	- trying to implemnt number 2. Setting up functionality to prompt username for question. Currently, I just set up all the code and fixed all the errors. Need to test if it works. The client can send messages to the hub, but messages are not echoed back. I most likely forgot to send a message back since I changed up the handling system of rooms.
