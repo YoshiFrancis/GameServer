@@ -13,7 +13,8 @@ void Hub::join(conn_ptr conn)
 	} 
 	else
 	{
-		std::cout << conn->getUsername() << " has joined the hub!\n";
+		message newMessage { "Server: " + conn->getUsername() + " has joined the hub!", 'M' };
+		deliverAll(newMessage);
 	}
 }
 
@@ -21,6 +22,8 @@ void Hub::leave(conn_ptr conn)
 {
 	Room::leave(conn);
 	lobbiless_conns.erase(conn);
+	message newMessage { "Server: " + conn->getUsername() + " has left!", 'M'};
+	deliverAll(newMessage);
 }
 
 std::shared_ptr<Lobby> Hub::findLobby(std::string id) 
@@ -63,7 +66,7 @@ bool Hub::doesUsernameExist(std::string name) const
 
 void Hub::promptConnUsername(conn_ptr conn)
 {
-	std::string question { "Please enter a username!!!" };
+	std::string question { "Server: Please enter a username!!!" };
 	message msg { question, 'Q'};
 	conn->setPrompt("Username");
 	msg.encode_header();
@@ -72,15 +75,13 @@ void Hub::promptConnUsername(conn_ptr conn)
 
 void Hub::handleMessage(message& msg, conn_ptr conn)
 {
-	std::cout << "Hub is handling!\n";
-	std::cout << msg.getFlag() << "\n";
 	if (!conn->isPrompt("None"))
 	{
 		msg.setFlag('R');
 	}
 	if (msg.getFlag() == 'M')
 	{
-		deliverAll(msg);
+		Room::handleMessage(msg, conn);
 	}
 	else if (msg.getFlag() == 'R')
 	{
@@ -110,7 +111,9 @@ void Hub::handleResponse(message& msg, conn_ptr conn)
 			conn->setUsername(username);
 			usernames_.insert(username);
 			std::cout << conn->getUsername() << " has joined the hub!\n";
+			message newMsg { "Server: " + conn->getUsername() + " has declared himself!", 'M' };
 			conn->setPrompt("None");
+			deliverAll(newMsg);
 		}
 	}
 }

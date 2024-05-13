@@ -11,7 +11,14 @@ void Room::join(conn_ptr conn)
 
 void Room::leave(conn_ptr conn)
 {
-    std::cout << "Person has left!\n";
+		if (conn->getUsername() != "")
+		{
+			std::cout << conn->getUsername() << " has left!\n";
+		}
+		else
+		{
+			std::cout << "Person has left!\n";
+		}
     connections_.erase(conn);
 }
 
@@ -29,5 +36,15 @@ void Room::handleMessage(message& msg, conn_ptr conn)
 {
 	std::cout << msg.getFlag() << "\n";
 	if (msg.getFlag() == 'M')
-		deliverAll(msg);
+	{
+		if (conn->getUsername() != "")
+		{
+			msg.body(conn->getUsername() + ": " + msg.body());
+			deliverAll(msg);
+		}
+		else
+		{
+			deliverAll(msg);
+		}
+	}
 }

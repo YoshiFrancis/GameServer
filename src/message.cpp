@@ -31,6 +31,12 @@ std::string message::body()
   return data_;
 }
 
+void message::body(std::string msg)
+{
+	data_ = msg;
+	body_length_ = data_.size();
+}
+
 std::size_t message::body_length() const
 {
   return body_length_;
@@ -60,7 +66,6 @@ void message::setFlag(char flag)
 void message::decode_header()
 {
   std::string header = data_.substr(0, 4);
-	std::cout << "Header: " << header << "\n";
 	flag_ = data_[4];
   body_length_ = std::stoi(header);
   data_.resize(body_length_);

@@ -17,6 +17,7 @@ public:
   std::size_t length() const;
   const std::string body() const;
   std::string body();
+	void body(std::string msg);
   std::size_t body_length() const;
   void body_length(std::size_t new_length);
 	char getFlag();

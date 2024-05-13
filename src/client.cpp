@@ -65,7 +65,6 @@ void Client::ReadHeader()
     if (!ec)
     {
       buffer_.decode_header();
-			
       ReadBody();
     }
     else 
@@ -83,7 +82,7 @@ void Client::ReadBody()
     {
       if (!ec)
       {
-        std::cout << "Message received: " << buffer_.data_ << "\n";
+        std::cout << buffer_.data_ << "\n";
         ReadHeader();
       }
       else
