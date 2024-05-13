@@ -18,7 +18,7 @@ public:
 		virtual void handleCommand(message& msg, conn_ptr conn);
 		virtual std::string getRoomInfo();
 		virtual std::string getCommands();
-		void alert(std::string message);
+		virtual void alert(std::string message);
 
 protected:
     std::set<conn_ptr> connections_;

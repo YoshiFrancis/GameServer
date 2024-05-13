@@ -24,8 +24,10 @@ One Server --> One Hub --> to many lobbies (each player can only be in one lobby
 
 ## TODO
 1. settup the infrastucture code for the server->hub->lobby->app system
-2. implement hub functionality
-	- give user list of options: create new game lobby, view all game lobbies, join game lobby, ( prompt user for username -- DONE )
+2. implement hub functionality -- DONE
+	- give user list of options: create new game lobby, view all game lobbies, join game lobby, ( prompt user for username -- DONE ) -- DONE
+
+
 3. implement lobby functionality
 	- get player to join, let player leave back to lobby, able to restart lobby (like when game ends), start game, end game, close lobby
 	- could potentially let other players spectate ongoing game in the future
@@ -35,4 +37,4 @@ One Server --> One Hub --> to many lobbies (each player can only be in one lobby
 
 
 	## CURRENT WORK
-	- still implementing hub functionality. However, now  knowing how to prompt a user for a task, should easibly be able to finish up all functionality for hub
+	- implementing lobby functionality

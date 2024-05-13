@@ -25,6 +25,19 @@ void Hub::leave(conn_ptr conn)
 	alert(conn->getUsername() + " has left!");
 }
 
+void Hub::deliverAll(message& msg, conn_ptr conn_sender)
+{
+	msg.encode_header();
+	std::for_each(lobbiless_conns.begin(), lobbiless_conns.end(), 
+		[&msg, conn_sender] (conn_ptr conn)
+		{
+			if (conn != conn_sender) 
+			{
+				conn->deliver(msg);
+			}
+		});
+}
+
 std::shared_ptr<Lobby> Hub::findLobby(std::string id) 
 {
 	std::shared_ptr<Lobby> lobbyIt = nullptr;
@@ -136,7 +149,7 @@ void Hub::handleCommand(message& msg, conn_ptr conn)
 	{
 		std::string lobby_id = msg.body().substr(8, msg.body_length());
 		Lobby newLobby { *this, lobby_id };
-		newLobby.join(conn);
+		joinLobby(newLobby, conn);
 		lobbies_.push_back(newLobby);
 		alert("New lobby has been created by " + conn->getUsername() + " called " + lobby_id);
 		// create lobby
@@ -166,3 +179,8 @@ std::string Hub::getCommands()
 	return commands_string;
 }
 
+void Hub::alert(std::string conn_msg)
+{
+	message newMsg { conn_msg, 'M' };
+	deliverAll(newMsg);
+}

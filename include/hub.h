@@ -25,6 +25,7 @@ public:
 	void joinLobby(Lobby& lobby, conn_ptr conn);
 	void join(conn_ptr conn) override;
 	void leave(conn_ptr conn) override;
+	void deliverAll(message& msg, conn_ptr conn_sender=nullptr) override;
 	void promptConnUsername(conn_ptr conn);
 	void handleMessage(message& msg, conn_ptr conn) override;
 	void handleCommand(message& msg, conn_ptr conn) override;
@@ -39,6 +40,7 @@ private:
 	void handleResponse(message& msg, conn_ptr conn);
 	std::string getRoomInfo() override;
 	std::string getCommands() override;
+	void alert(std::string conn_msg) override;
 };
 
 #endif
