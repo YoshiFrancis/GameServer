@@ -21,10 +21,9 @@ class Lobby : public Room
 {
 
 public:
-	Lobby(Hub& hub, conn_ptr host)
-		: hub_ { hub }
+	Lobby(Hub& hub, std::string id)
+		: hub_ { hub }, id_ { id }
 	{
-		join(host);
 	}
 
 public:

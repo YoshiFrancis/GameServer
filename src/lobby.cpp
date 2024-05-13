@@ -10,7 +10,7 @@ std::string Lobby::getId() const
 void Lobby::join(conn_ptr conn) 
 {
 	Room::join(conn);
-	app_->join(conn);
+	//	app_->join(conn);
 	usernames_.insert(conn->getUsername());
 }
 

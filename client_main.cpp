@@ -44,17 +44,9 @@ int main(int argc, char* argv[])
 			ltrim(input);
 			rtrim(input);
 			message msg(input, 'M');
-			std::string keyWord{};
-			if (input.substr(5) == "/view")  			 // for viewing the room statistics
+			if (input[0] == '/')
 			{
-				msg.setFlag('V');
-			}
-			else if (input.substr(7) == "/create") // for creating lobby
-			{
-				std::string creationId = input.substr(7, input.size());
-				ltrim(creationId);
 				msg.setFlag('C');
-				msg.body(creationId);
 			}
       c.deliver(msg);
     }

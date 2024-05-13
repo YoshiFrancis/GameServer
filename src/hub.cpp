@@ -13,8 +13,7 @@ void Hub::join(conn_ptr conn)
 	} 
 	else
 	{
-		message newMessage { "Server: " + conn->getUsername() + " has joined the hub!", 'M' };
-		deliverAll(newMessage);
+		alert(conn->getUsername() + " has joined the hub!");
 	}
 }
 
@@ -22,8 +21,8 @@ void Hub::leave(conn_ptr conn)
 {
 	Room::leave(conn);
 	lobbiless_conns.erase(conn);
-	message newMessage { "Server: " + conn->getUsername() + " has left!", 'M'};
-	deliverAll(newMessage);
+	usernames_.erase(conn->getUsername());
+	alert(conn->getUsername() + " has left!");
 }
 
 std::shared_ptr<Lobby> Hub::findLobby(std::string id) 
@@ -102,9 +101,8 @@ void Hub::handleResponse(message& msg, conn_ptr conn)
 			conn->setUsername(username);
 			usernames_.insert(username);
 			std::cout << conn->getUsername() << " has joined the hub!\n";
-			message newMsg { "Server: " + conn->getUsername() + " has declared himself!", 'M' };
 			conn->setPrompt("None");
-			deliverAll(newMsg);
+			alert(conn->getUsername() + " has declared himself!");
 		}
 	}
 }
@@ -118,18 +116,30 @@ void Hub::handleCommand(message& msg, conn_ptr conn)
 		info_msg.encode_header();
 		conn->deliver(info_msg);
 	}
-	else if (msg.body().substr(0, 7) == "/create")
+	else if (msg.body().substr(0, 5) == "/help")
 	{
-		// create lobby
+		message command_msg { getCommands(), 'M' };
+		command_msg.encode_header();
+		conn->deliver(command_msg);
 	}
 	else if (msg.body().substr(0, 5) == "/join")
 	{
-		auto lobby = findLobby(msg.data_);
+		std::string lobby_id = msg.body().substr(6, msg.body_length());
+		auto lobby = findLobby(lobby_id);
 		joinLobby(*lobby, conn);
 	}
 	else if (msg.body().substr(0, 6) == "/leave")
 	{
 		leave(conn);
+	}
+	else if (msg.body().substr(0, 7) == "/create")
+	{
+		std::string lobby_id = msg.body().substr(8, msg.body_length());
+		Lobby newLobby { *this, lobby_id };
+		newLobby.join(conn);
+		lobbies_.push_back(newLobby);
+		alert("New lobby has been created by " + conn->getUsername() + " called " + lobby_id);
+		// create lobby
 	}
 }
 
@@ -141,6 +151,7 @@ std::string Hub::getRoomInfo()
 	info_string += "\nList of usernames of connections: ";
 	std::for_each(usernames_.begin(), usernames_.end(), [&info_string](std::string username) { info_string += username + ", "; });
 	info_string += "\nList of lobbies: ";
+	std::for_each(lobbies_.begin(), lobbies_.end(), [&info_string](Lobby& lobby) { info_string += lobby.getId() + ", "; });
 	return info_string;
 }
 
@@ -151,6 +162,7 @@ std::string Hub::getCommands()
 	commands_string += "\n/create <lobby name> : create a lobby with a specified lobby name";
 	commands_string += "\n/join <lobby name> : join a lobby with a specified lobby name";
 	commands_string += "\n/leave : leave hub and disconnect from server entirely";
+	commands_string += "\n/help : view list of commands";
 	return commands_string;
 }
 

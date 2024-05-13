@@ -2,9 +2,9 @@
 #define ROOM_H
 
 #include "ConnectionI.hpp"
+#include "message.hpp"
 #include <set>
 
-class message;
 
 typedef std::shared_ptr<ConnectionI> conn_ptr;
 
@@ -18,6 +18,7 @@ public:
 		virtual void handleCommand(message& msg, conn_ptr conn);
 		virtual std::string getRoomInfo();
 		virtual std::string getCommands();
+		void alert(std::string message);
 
 protected:
     std::set<conn_ptr> connections_;

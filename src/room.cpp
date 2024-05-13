@@ -75,3 +75,9 @@ std::string Room::getCommands()
 	commands_string += "/view : view the descriptions about the room";
 	return commands_string;
 }
+
+void Room::alert(std::string conn_msg)
+{
+	message alert_msg { "Server: " + conn_msg, 'M' };
+	deliverAll(alert_msg);
+}
