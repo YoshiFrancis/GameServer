@@ -22,13 +22,16 @@ void Room::leave(conn_ptr conn)
     connections_.erase(conn);
 }
 
-void Room::deliverAll(message& msg)
+void Room::deliverAll(message& msg, conn_ptr conn_sender)
 {
     msg.encode_header();
     std::cout << connections_.size() << " number of connections to send to\n";
     for (auto conn : connections_)
     {
-        conn->deliver(msg);
+			if (conn->isPrompt("None") && conn != conn_sender)
+			{
+				conn->deliver(msg);
+			}
     }
 }
 
@@ -40,7 +43,7 @@ void Room::handleMessage(message& msg, conn_ptr conn)
 		if (conn->getUsername() != "")
 		{
 			msg.body(conn->getUsername() + ": " + msg.body());
-			deliverAll(msg);
+			deliverAll(msg, conn);
 		}
 		else
 		{

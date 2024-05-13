@@ -13,7 +13,7 @@ class Room
 public:
     virtual void join(conn_ptr conn);
     virtual void leave(conn_ptr conn);
-    virtual void deliverAll(message& msg);
+    virtual void deliverAll(message& msg, conn_ptr conn_sender = nullptr);
 		virtual void handleMessage(message& msg, conn_ptr conn);
 
 protected:
