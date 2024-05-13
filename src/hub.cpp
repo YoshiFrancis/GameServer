@@ -77,24 +77,15 @@ void Hub::handleMessage(message& msg, conn_ptr conn)
 {
 	if (!conn->isPrompt("None"))
 	{
-		msg.setFlag('R');
+		handleResponse(msg, conn);
+	} 
+	else if (msg.getFlag() == 'C')
+	{
+		handleCommand(msg, conn);
 	}
-	if (msg.getFlag() == 'M')
+	else // default to message
 	{
 		Room::handleMessage(msg, conn);
-	}
-	else if (msg.getFlag() == 'R')
-	{
-		handleResponse(msg, conn);
-	}
-	else if (msg.getFlag() == 'J')
-	{
-		auto lobby = findLobby(msg.data_);
-		joinLobby(*lobby, conn);
-	}
-	else if (msg.getFlag() == 'L')
-	{
-		leave(conn);
 	}
 }
 
@@ -117,3 +108,49 @@ void Hub::handleResponse(message& msg, conn_ptr conn)
 		}
 	}
 }
+
+void Hub::handleCommand(message& msg, conn_ptr conn)
+{
+	if (msg.body().substr(0,5) == "/view")
+	{
+		std::string info = getRoomInfo();
+		message info_msg { info, 'M' };
+		info_msg.encode_header();
+		conn->deliver(info_msg);
+	}
+	else if (msg.body().substr(0, 7) == "/create")
+	{
+		// create lobby
+	}
+	else if (msg.body().substr(0, 5) == "/join")
+	{
+		auto lobby = findLobby(msg.data_);
+		joinLobby(*lobby, conn);
+	}
+	else if (msg.body().substr(0, 6) == "/leave")
+	{
+		leave(conn);
+	}
+}
+
+std::string Hub::getRoomInfo()
+{
+	std::string info_string{};
+	info_string += Room::getRoomInfo();
+	info_string += "\nTotal number of connections in hub: " + std::to_string(lobbiless_conns.size());
+	info_string += "\nList of usernames of connections: ";
+	std::for_each(usernames_.begin(), usernames_.end(), [&info_string](std::string username) { info_string += username + ", "; });
+	info_string += "\nList of lobbies: ";
+	return info_string;
+}
+
+std::string Hub::getCommands()
+{
+	std::string commands_string{"Server:"};
+	commands_string += "\n/view : view the total number of connections, total connections not in a lobby, list of usernames, and list of currently active lobbies";
+	commands_string += "\n/create <lobby name> : create a lobby with a specified lobby name";
+	commands_string += "\n/join <lobby name> : join a lobby with a specified lobby name";
+	commands_string += "\n/leave : leave hub and disconnect from server entirely";
+	return commands_string;
+}
+

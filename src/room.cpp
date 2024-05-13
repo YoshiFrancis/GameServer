@@ -51,3 +51,27 @@ void Room::handleMessage(message& msg, conn_ptr conn)
 		}
 	}
 }
+
+void Room::handleCommand(message& msg, conn_ptr conn)
+{
+	if (msg.body().substr(0, 5) == "/view")
+	{
+		message info_msg { "Server:\n" + getRoomInfo(), 'M' };
+		info_msg.encode_header();
+		conn->deliver(info_msg);
+	}
+}
+
+std::string Room::getRoomInfo()
+{
+	std::string info_string{};
+	info_string += "Total number of connections: " + std::to_string(connections_.size());
+	return info_string;
+}
+
+std::string Room::getCommands()
+{
+	std::string commands_string{ "/view" };
+	commands_string += "/view : view the descriptions about the room";
+	return commands_string;
+}

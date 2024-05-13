@@ -25,7 +25,7 @@ One Server --> One Hub --> to many lobbies (each player can only be in one lobby
 ## TODO
 1. settup the infrastucture code for the server->hub->lobby->app system
 2. implement hub functionality
-	- give user list of options: create new game lobby, view all game lobbies, join game lobby, prompt user for username
+	- give user list of options: create new game lobby, view all game lobbies, join game lobby, ( prompt user for username -- DONE )
 3. implement lobby functionality
 	- get player to join, let player leave back to lobby, able to restart lobby (like when game ends), start game, end game, close lobby
 	- could potentially let other players spectate ongoing game in the future
@@ -35,4 +35,4 @@ One Server --> One Hub --> to many lobbies (each player can only be in one lobby
 
 
 	## CURRENT WORK
-	- trying to implemnt number 2. Setting up functionality to prompt username for question. Currently, I just set up all the code and fixed all the errors. Need to test if it works. The client can send messages to the hub, but messages are not echoed back. I most likely forgot to send a message back since I changed up the handling system of rooms.
+	- still implementing hub functionality. However, now  knowing how to prompt a user for a task, should easibly be able to finish up all functionality for hub

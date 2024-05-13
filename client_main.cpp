@@ -3,9 +3,25 @@
 #include <iostream>
 #include <thread>
 #include <string>
+#include <algorithm> 
+#include <cctype>
+#include <locale>
 
 using asio::ip::tcp;
 
+// trim from start (in place)
+inline void ltrim(std::string &s) {
+    s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](unsigned char ch) {
+        return !std::isspace(ch);
+    }));
+}
+
+// trim from end (in place)
+inline void rtrim(std::string &s) {
+    s.erase(std::find_if(s.rbegin(), s.rend(), [](unsigned char ch) {
+        return !std::isspace(ch);
+    }).base(), s.end());
+}
 int main(int argc, char* argv[])
 {
 
@@ -25,7 +41,21 @@ int main(int argc, char* argv[])
     std::string input{};
     while (std::getline(std::cin, input) && c.is_connected)
     {
-      message msg(input, 'M');
+			ltrim(input);
+			rtrim(input);
+			message msg(input, 'M');
+			std::string keyWord{};
+			if (input.substr(5) == "/view")  			 // for viewing the room statistics
+			{
+				msg.setFlag('V');
+			}
+			else if (input.substr(7) == "/create") // for creating lobby
+			{
+				std::string creationId = input.substr(7, input.size());
+				ltrim(creationId);
+				msg.setFlag('C');
+				msg.body(creationId);
+			}
       c.deliver(msg);
     }
     if (c.is_connected)

@@ -27,6 +27,7 @@ public:
 	void leave(conn_ptr conn) override;
 	void promptConnUsername(conn_ptr conn);
 	void handleMessage(message& msg, conn_ptr conn) override;
+	void handleCommand(message& msg, conn_ptr conn) override;
 
 private:
 	std::set<std::string> usernames_;
@@ -36,6 +37,8 @@ private:
 
 	bool doesUsernameExist(std::string name) const;
 	void handleResponse(message& msg, conn_ptr conn);
+	std::string getRoomInfo() override;
+	std::string getCommands() override;
 };
 
 #endif

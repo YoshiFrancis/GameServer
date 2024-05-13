@@ -15,6 +15,9 @@ public:
     virtual void leave(conn_ptr conn);
     virtual void deliverAll(message& msg, conn_ptr conn_sender = nullptr);
 		virtual void handleMessage(message& msg, conn_ptr conn);
+		virtual void handleCommand(message& msg, conn_ptr conn);
+		virtual std::string getRoomInfo();
+		virtual std::string getCommands();
 
 protected:
     std::set<conn_ptr> connections_;
