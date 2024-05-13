@@ -5,9 +5,16 @@ static void handleResponse(message& msg, conn_ptr conn);
 
 void Hub::join(conn_ptr conn)  
 {
-	std::cout << "Connection has joined hub!\n";
 	Room::join(conn);
 	lobbiless_conns.insert(conn);
+	if (conn->getUsername() == "")
+	{
+		promptConnUsername(conn);
+	} 
+	else
+	{
+		std::cout << conn->getUsername() << " has joined the hub!\n";
+	}
 }
 
 void Hub::leave(conn_ptr conn)
@@ -59,6 +66,7 @@ void Hub::promptConnUsername(conn_ptr conn)
 	std::string question { "Please enter a username!!!" };
 	message msg { question, 'Q'};
 	conn->setPrompt("Username");
+	msg.encode_header();
 	conn->deliver(msg);
 }
 
@@ -66,6 +74,10 @@ void Hub::handleMessage(message& msg, conn_ptr conn)
 {
 	std::cout << "Hub is handling!\n";
 	std::cout << msg.getFlag() << "\n";
+	if (!conn->isPrompt("None"))
+	{
+		msg.setFlag('R');
+	}
 	if (msg.getFlag() == 'M')
 	{
 		deliverAll(msg);
@@ -97,6 +109,8 @@ void Hub::handleResponse(message& msg, conn_ptr conn)
 		{
 			conn->setUsername(username);
 			usernames_.insert(username);
+			std::cout << conn->getUsername() << " has joined the hub!\n";
+			conn->setPrompt("None");
 		}
 	}
 }

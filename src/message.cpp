@@ -1,4 +1,5 @@
 #include "message.hpp"
+#include <iostream>
 
 message::message(std::string msg, char flag)
 	: data_{ msg }, flag_ { flag }
@@ -59,6 +60,7 @@ void message::setFlag(char flag)
 void message::decode_header()
 {
   std::string header = data_.substr(0, 4);
+	std::cout << "Header: " << header << "\n";
 	flag_ = data_[4];
   body_length_ = std::stoi(header);
   data_.resize(body_length_);
