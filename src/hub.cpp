@@ -65,6 +65,7 @@ void Hub::promptConnUsername(conn_ptr conn)
 void Hub::handleMessage(message& msg, conn_ptr conn)
 {
 	std::cout << "Hub is handling!\n";
+	std::cout << msg.getFlag() << "\n";
 	if (msg.getFlag() == 'M')
 	{
 		deliverAll(msg);

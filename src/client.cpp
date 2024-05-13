@@ -11,7 +11,7 @@
 using asio::ip::tcp;
 
 Client::Client(asio::io_context& io_context, tcp::resolver::results_type& endpoints)
-    : io_{io_context}, socket_(io_context)
+    : io_{io_context}, socket_(io_context), buffer_ {"None" , 'M'}
 {
   Connect(endpoints);
 }

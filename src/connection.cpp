@@ -6,7 +6,7 @@ using asio::ip::tcp;
 
 
 Connection::Connection(tcp::socket socket, Room& room)
-  : socket_(std::move(socket)), room_(room)
+  : socket_(std::move(socket)), room_(room), buffer_{"None", 'M'}
 {
 }
 
