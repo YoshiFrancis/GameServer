@@ -5,21 +5,21 @@
 using asio::ip::tcp;
 
 
-Connection::Connection(tcp::socket socket, Room& room)
+Connection::Connection(tcp::socket socket, Room* room)
   : socket_(std::move(socket)), room_(room), buffer_{"None", 'M'}
 {
 }
 
 void Connection::start()
 {
-  room_.join(shared_from_this());
+  room_->join(shared_from_this());
   ReadHeader();
 }
 
-void Connection::changeRoom(Room& room)
+void Connection::changeRoom(Room* room)
 {
-	room_.leave(shared_from_this());
-	room.join(shared_from_this());
+	room_->leave(shared_from_this());
+	room->join(shared_from_this());
 	room_ = room;
 }
 
@@ -48,7 +48,7 @@ void Connection::ReadHeader()
       else 
       {
         std::cout << "Reading Header Error: " << ec.message() << "\n";
-        room_.leave(shared_from_this());
+        room_->leave(shared_from_this());
       }
   });
 }
@@ -62,13 +62,13 @@ void Connection::ReadBody()
       if (!ec)
       {
           std::cout << buffer_.data_ << "\n";
-          room_.handleMessage(buffer_, shared_from_this());
+          room_->handleMessage(buffer_, shared_from_this());
           ReadHeader();
       } 
       else
       {
           std::cout << "Reading error: " << ec.message() << "\n";
-          room_.leave(shared_from_this());
+          room_->leave(shared_from_this());
       }
   });
 }
@@ -90,7 +90,7 @@ void Connection::Write()
       else
       {
           std::cout << "Write error: " << ec.message() << "\n";
-          room_.leave(shared_from_this());
+          room_->leave(shared_from_this());
       }
   });
 }

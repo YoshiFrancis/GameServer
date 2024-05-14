@@ -38,33 +38,31 @@ void Hub::deliverAll(message& msg, conn_ptr conn_sender)
 		});
 }
 
-std::shared_ptr<Lobby> Hub::findLobby(std::string id) 
+Lobby* Hub::findLobby(std::string id) 
 {
-	std::shared_ptr<Lobby> lobbyIt = nullptr;
-	/*
-	auto lobbyIt = std::find(lobbies_.begin(), lobbies_.end(), 
-		[&id](Lobby& lobby)
-		{
-			return lobby.getId() == id;
-		});
-	*/
-	for (auto lobby : lobbies_)
+	Lobby* lobbyIt = nullptr;
+	for (auto& lobby : lobbies_)
 	{
 		if (lobby.getId() == id)
 		{
-			lobbyIt = std::make_shared<Lobby>(lobby);
+			lobbyIt = &lobby;
 			break;
 		}
 	}
-	if (lobbyIt == nullptr)
-		return nullptr;
-	else
-		return lobbyIt;
+	return lobbyIt;
 }
 
 void Hub::joinLobby(Lobby& lobby, conn_ptr conn)
 {
+	conn->changeRoom(&lobby);
+	std::cout << "Connection has changed room\n";
+	lobbiless_conns.erase(conn);
+}
+
+void Hub::joinLobby(Lobby* lobby, conn_ptr conn)
+{
 	conn->changeRoom(lobby);
+	std::cout << "Connectiong has joined lobby\n";
 	lobbiless_conns.erase(conn);
 }
 
@@ -148,9 +146,8 @@ void Hub::handleCommand(message& msg, conn_ptr conn)
 	else if (msg.body().substr(0, 7) == "/create")
 	{
 		std::string lobby_id = msg.body().substr(8, msg.body_length());
-		Lobby newLobby { *this, lobby_id };
-		joinLobby(newLobby, conn);
-		lobbies_.push_back(newLobby);
+		lobbies_.emplace_back(  *this, lobby_id );
+		joinLobby(lobbies_.back(), conn);
 		alert("New lobby has been created by " + conn->getUsername() + " called " + lobby_id);
 		// create lobby
 	}

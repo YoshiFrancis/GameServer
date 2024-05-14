@@ -21,8 +21,9 @@ class Hub : public Room
 {
 
 public:
-	std::shared_ptr<Lobby> findLobby(std::string id);
+	Lobby* findLobby(std::string id);
 	void joinLobby(Lobby& lobby, conn_ptr conn);
+	void joinLobby(Lobby* lobby, conn_ptr conn);
 	void join(conn_ptr conn) override;
 	void leave(conn_ptr conn) override;
 	void deliverAll(message& msg, conn_ptr conn_sender=nullptr) override;

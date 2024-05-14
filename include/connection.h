@@ -10,11 +10,11 @@ using asio::ip::tcp;
 class Connection : public std::enable_shared_from_this<Connection>, public ConnectionI
 {
 public:
-    Connection(tcp::socket socket, Room& room);
+    Connection(tcp::socket socket, Room* room);
     void start();
     void deliver(message msg) override;
 		void joinRoom(Room& room);
-		void changeRoom(Room& room) override;
+		void changeRoom(Room* room) override;
 		std::string getUsername() override;
 		void setUsername(std::string) override;
 		void setPrompt(std::string prompt) override;
@@ -22,7 +22,7 @@ public:
 
 private:
     tcp::socket socket_;
-    Room& room_;
+    Room* room_;
     std::deque<message> messageQ_;
     message buffer_;
 		std::string username_;

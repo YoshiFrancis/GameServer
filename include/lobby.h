@@ -30,6 +30,7 @@ public:
 	std::string getId() const;
 	void join(conn_ptr conn) override;
 	void leave(conn_ptr conn) override;
+	void handleMessage(message& msg, conn_ptr conn) override;
 
 private:
 	std::set<std::string> usernames_;
@@ -43,6 +44,10 @@ private:
 	void startApp();
 	void endApp();
 	void closeLobby();
+	void handleCommand(message& msg, conn_ptr conn) override;
+	std::string getRoomInfo() override;
+	std::string getCommands() override;
+	void alert(std::string conn_msg) override;
 };
 
 #endif
