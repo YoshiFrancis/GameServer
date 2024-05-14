@@ -13,16 +13,15 @@ void Lobby::join(conn_ptr conn)
 	Room::join(conn);
 	//	app_->join(conn);
 	usernames_.insert(conn->getUsername());
-	std::cout << conn->getUsername() << " is joining the lobby!\n";
+	alert(conn->getUsername() + " is joining the lobby!\n");
 }
 
 void Lobby::leave(conn_ptr conn) 
 {
 	Room::leave(conn);
-	conn->changeRoom(&hub_);
-	connections_.erase(conn);
 	usernames_.erase(conn->getUsername());
-	app_->leave(conn);
+	alert(conn-getUsername() + " is leaving the lobby!\n");
+	// app_->leave(conn);
 }
 
 void Lobby::startApp()
@@ -79,7 +78,7 @@ void Lobby::handleCommand(message& msg, conn_ptr conn)
 	}
 	else if (msg.body().substr(0, 6) == "/leave")
 	{
-		leave(conn);
+		conn->changeRoom(&hub_);
 	}
 }
 

@@ -14,6 +14,7 @@ void Hub::join(conn_ptr conn)
 	else
 	{
 		alert(conn->getUsername() + " has joined the hub!");
+		usernames_.insert(conn->getUsername());
 	}
 }
 
