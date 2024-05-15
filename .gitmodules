@@ -1,0 +1,3 @@
+[submodule "CardGame"]
+	path = CardGame
+	url = https://github.com/YoshiFrancis/Card-Game.git
