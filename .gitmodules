@@ -1,3 +1,4 @@
 [submodule "Card-Game"]
 	path = Card-Game
 	url = https://github.com/YoshiFrancis/Card-Game.git
+	branch = main
