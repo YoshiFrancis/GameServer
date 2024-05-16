@@ -21,9 +21,10 @@ class Lobby : public Room
 {
 
 public:
-	Lobby(Hub& hub, std::string id)
-		: hub_ { hub }, id_ { id }
+	Lobby( std::set<conn_ptr>& connections, Hub& hub, std::string id, Application app)
+		: Room ( connections ), hub_ { hub }, id_ { id }, app_ { app }
 	{
+		app_->addClients(connections);
 	}
 
 public:
@@ -36,7 +37,7 @@ private:
 	std::set<std::string> usernames_;
 	// std::set<conn_ptr> connections_; -- inherited from Room
 	Hub& hub_;
-	std::shared_ptr<Application> app_;
+	Application& app_;
 	std::string id_;
 	bool hasStarted_ = false;
 	bool isClosed_ = false;

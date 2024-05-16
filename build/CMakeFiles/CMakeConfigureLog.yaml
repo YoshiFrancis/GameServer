@@ -224,3 +224,44 @@ events:
       Library search paths:
       Framework search paths:
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/Cellar/cmake/3.29.1/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/opt/homebrew/Cellar/cmake/3.29.1/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/Cellar/cmake/3.29.1/share/cmake/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "build/_deps/catch2-src/CMake/CatchMiscFunctions.cmake:12 (check_cxx_compiler_flag)"
+      - "build/_deps/catch2-src/CMake/CatchMiscFunctions.cmake:119 (add_cxx_flag_if_supported_to_targets)"
+      - "build/_deps/catch2-src/src/CMakeLists.txt:342 (add_build_reproducibility_settings)"
+    checks:
+      - "Performing Test HAVE_FLAG__ffile_prefix_map__Users_fozua_Desktop_GameServer_build__deps_catch2_src__"
+    directories:
+      source: "/Users/fozua/Desktop/GameServer/build/CMakeFiles/CMakeScratch/TryCompile-3OsRgf"
+      binary: "/Users/fozua/Desktop/GameServer/build/CMakeFiles/CMakeScratch/TryCompile-3OsRgf"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/fozua/Desktop/GameServer/build/_deps/catch2-src/extras;/Users/fozua/Desktop/GameServer/build/_deps/catch2-src/CMake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "13.5"
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk"
+    buildResult:
+      variable: "HAVE_FLAG__ffile_prefix_map__Users_fozua_Desktop_GameServer_build__deps_catch2_src__"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/fozua/Desktop/GameServer/build/CMakeFiles/CMakeScratch/TryCompile-3OsRgf'
+        
+        Run Build Command(s): /opt/homebrew/Cellar/cmake/3.29.1/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_69e65/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_69e65.dir/build.make CMakeFiles/cmTC_69e65.dir/build
+        Building CXX object CMakeFiles/cmTC_69e65.dir/src.cxx.o
+        /Library/Developer/CommandLineTools/usr/bin/c++ -DHAVE_FLAG__ffile_prefix_map__Users_fozua_Desktop_GameServer_build__deps_catch2_src__  -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.5   -ffile-prefix-map=/Users/fozua/Desktop/GameServer/build/_deps/catch2-src/= -MD -MT CMakeFiles/cmTC_69e65.dir/src.cxx.o -MF CMakeFiles/cmTC_69e65.dir/src.cxx.o.d -o CMakeFiles/cmTC_69e65.dir/src.cxx.o -c /Users/fozua/Desktop/GameServer/build/CMakeFiles/CMakeScratch/TryCompile-3OsRgf/src.cxx
+        Linking CXX executable cmTC_69e65
+        /opt/homebrew/Cellar/cmake/3.29.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69e65.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.5 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_69e65.dir/src.cxx.o -o cmTC_69e65
+        
+      exitCode: 0
+...

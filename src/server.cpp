@@ -3,8 +3,8 @@
 #include <iostream>
 #include <memory>
 
-Server::Server(asio::io_context& io_context, tcp::endpoint& endpoint)
-    : acceptor_(io_context, endpoint)
+Server::Server(asio::io_context& io_context, tcp::endpoint& endpoint, std::vector<ApplicationType>& applications)
+    : acceptor_(io_context, endpoint), hub_ { applications }
 {
     Accept();
 }

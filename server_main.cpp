@@ -1,5 +1,6 @@
 #include "asio.hpp"
 #include "server.h"
+#include "CardGame.h"
 #include <iostream>
 
 using asio::ip::tcp;
@@ -13,9 +14,10 @@ int main(int argc, char* argv[])
       std::cout << "Usage: <port>\n";
     }
 
+		ApplicationType UnoGame { CardGame(), "Uno Game" };
     asio::io_context io_context;
     tcp::endpoint endpoint(tcp::v4(), std::atoi(argv[1]));
-    Server server(io_context, endpoint);
+    Server server(io_context, endpoint, { UnoGame } );
     io_context.run();
   }
   catch(const std::exception& e)

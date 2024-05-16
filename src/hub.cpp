@@ -147,7 +147,7 @@ void Hub::handleCommand(message& msg, conn_ptr conn)
 	else if (msg.body().substr(0, 7) == "/create")
 	{
 		std::string lobby_id = msg.body().substr(8, msg.body_length());
-		lobbies_.emplace_back(  *this, lobby_id );
+		lobbies_.emplace_back(  *this, lobby_id, applications_[0].app );
 		joinLobby(lobbies_.back(), conn);
 		alert("New lobby has been created by " + conn->getUsername() + " called " + lobby_id);
 		// create lobby

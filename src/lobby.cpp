@@ -20,7 +20,7 @@ void Lobby::leave(conn_ptr conn)
 {
 	Room::leave(conn);
 	usernames_.erase(conn->getUsername());
-	alert(conn-getUsername() + " is leaving the lobby!\n");
+	alert(conn->getUsername() + " is leaving the lobby!\n");
 	// app_->leave(conn);
 }
 

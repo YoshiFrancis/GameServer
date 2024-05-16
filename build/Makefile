@@ -168,6 +168,84 @@ client/fast:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/client.dir/build.make src/CMakeFiles/client.dir/build
 .PHONY : client/fast
 
+#=============================================================================
+# Target rules for targets named helper
+
+# Build rule for target.
+helper: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 helper
+.PHONY : helper
+
+# fast build rule for target.
+helper/fast:
+	$(MAKE) $(MAKESILENT) -f Card-Game/CMakeFiles/helper.dir/build.make Card-Game/CMakeFiles/helper.dir/build
+.PHONY : helper/fast
+
+#=============================================================================
+# Target rules for targets named unogame
+
+# Build rule for target.
+unogame: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 unogame
+.PHONY : unogame
+
+# fast build rule for target.
+unogame/fast:
+	$(MAKE) $(MAKESILENT) -f Card-Game/src/CMakeFiles/unogame.dir/build.make Card-Game/src/CMakeFiles/unogame.dir/build
+.PHONY : unogame/fast
+
+#=============================================================================
+# Target rules for targets named test_local
+
+# Build rule for target.
+test_local: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_local
+.PHONY : test_local
+
+# fast build rule for target.
+test_local/fast:
+	$(MAKE) $(MAKESILENT) -f Card-Game/tests/CMakeFiles/test_local.dir/build.make Card-Game/tests/CMakeFiles/test_local.dir/build
+.PHONY : test_local/fast
+
+#=============================================================================
+# Target rules for targets named test_helper
+
+# Build rule for target.
+test_helper: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_helper
+.PHONY : test_helper
+
+# fast build rule for target.
+test_helper/fast:
+	$(MAKE) $(MAKESILENT) -f Card-Game/tests/CMakeFiles/test_helper.dir/build.make Card-Game/tests/CMakeFiles/test_helper.dir/build
+.PHONY : test_helper/fast
+
+#=============================================================================
+# Target rules for targets named Catch2
+
+# Build rule for target.
+Catch2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Catch2
+.PHONY : Catch2
+
+# fast build rule for target.
+Catch2/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2.dir/build
+.PHONY : Catch2/fast
+
+#=============================================================================
+# Target rules for targets named Catch2WithMain
+
+# Build rule for target.
+Catch2WithMain: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Catch2WithMain
+.PHONY : Catch2WithMain
+
+# fast build rule for target.
+Catch2WithMain/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/build
+.PHONY : Catch2WithMain/fast
+
 client_main.o: client_main.cpp.o
 .PHONY : client_main.o
 
@@ -224,10 +302,16 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Catch2"
+	@echo "... Catch2WithMain"
 	@echo "... client"
 	@echo "... client_main"
+	@echo "... helper"
 	@echo "... server"
 	@echo "... server_main"
+	@echo "... test_helper"
+	@echo "... test_local"
+	@echo "... unogame"
 	@echo "... client_main.o"
 	@echo "... client_main.i"
 	@echo "... client_main.s"

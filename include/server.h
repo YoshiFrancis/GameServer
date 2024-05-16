@@ -9,7 +9,8 @@ using asio::ip::tcp;
 class Server
 {
 public:
-    Server(asio::io_context& io_context, tcp::endpoint& endpoint);
+
+    Server(asio::io_context& io_context, tcp::endpoint& endpoint, std::vector<ApplicationType>& applications);
     void Accept();
 
 private:

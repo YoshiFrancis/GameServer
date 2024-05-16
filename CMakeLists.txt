@@ -9,6 +9,8 @@ project(testing
 include_directories(~/Documents/ASIO/asio-1.30.2/include include)
 
 add_subdirectory(src)
+add_subdirectory(Card-Game)
+target_link_libraries(unogame PUBLIC server)
 
 add_executable(server_main server_main.cpp)
 add_executable(client_main client_main.cpp)
