@@ -10,7 +10,7 @@ class Server
 {
 public:
 
-    Server(asio::io_context& io_context, tcp::endpoint& endpoint, std::vector<ApplicationType>& applications);
+    Server(asio::io_context& io_context, tcp::endpoint& endpoint, std::vector<Application*>& applications);
     void Accept();
 
 private:

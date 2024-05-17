@@ -6,8 +6,6 @@
 #include <set>
 
 
-typedef std::shared_ptr<ConnectionI> conn_ptr;
-
 class Room
 {
 public:

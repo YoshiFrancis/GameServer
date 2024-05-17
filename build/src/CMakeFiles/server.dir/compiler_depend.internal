@@ -724,8 +724,6 @@ src/CMakeFiles/server.dir/application.cpp.o
  /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stdint.h
  /Users/fozua/Desktop/GameServer/include/ConnectionI.hpp
  /Users/fozua/Desktop/GameServer/include/application.h
- /Users/fozua/Desktop/GameServer/include/hub.h
- /Users/fozua/Desktop/GameServer/include/lobby.h
  /Users/fozua/Desktop/GameServer/include/message.hpp
  /Users/fozua/Desktop/GameServer/include/room.h
 

@@ -1,3 +1,6 @@
+#ifndef CONNECTIONI_H
+#define CONNECTIONI_H
+
 #include "message.hpp"
 #include <memory>
 
@@ -14,3 +17,7 @@ public:
 		virtual void setPrompt(std::string prompt) = 0;
 		virtual bool isPrompt(std::string prompt) = 0;
 };
+
+typedef std::shared_ptr<ConnectionI> conn_ptr;
+
+#endif

@@ -3,6 +3,7 @@
 #include <string>
 #include <algorithm>
 
+
 std::string Lobby::getId() const
 {
 	return id_;

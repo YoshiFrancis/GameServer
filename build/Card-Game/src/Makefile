@@ -130,6 +130,30 @@ unogame/fast:
 	cd /Users/fozua/Desktop/GameServer/build && $(MAKE) $(MAKESILENT) -f Card-Game/src/CMakeFiles/unogame.dir/build.make Card-Game/src/CMakeFiles/unogame.dir/build
 .PHONY : unogame/fast
 
+CardGame.o: CardGame.cpp.o
+.PHONY : CardGame.o
+
+# target to build an object file
+CardGame.cpp.o:
+	cd /Users/fozua/Desktop/GameServer/build && $(MAKE) $(MAKESILENT) -f Card-Game/src/CMakeFiles/unogame.dir/build.make Card-Game/src/CMakeFiles/unogame.dir/CardGame.cpp.o
+.PHONY : CardGame.cpp.o
+
+CardGame.i: CardGame.cpp.i
+.PHONY : CardGame.i
+
+# target to preprocess a source file
+CardGame.cpp.i:
+	cd /Users/fozua/Desktop/GameServer/build && $(MAKE) $(MAKESILENT) -f Card-Game/src/CMakeFiles/unogame.dir/build.make Card-Game/src/CMakeFiles/unogame.dir/CardGame.cpp.i
+.PHONY : CardGame.cpp.i
+
+CardGame.s: CardGame.cpp.s
+.PHONY : CardGame.s
+
+# target to generate assembly for a file
+CardGame.cpp.s:
+	cd /Users/fozua/Desktop/GameServer/build && $(MAKE) $(MAKESILENT) -f Card-Game/src/CMakeFiles/unogame.dir/build.make Card-Game/src/CMakeFiles/unogame.dir/CardGame.cpp.s
+.PHONY : CardGame.cpp.s
+
 Deck.o: Deck.cpp.o
 .PHONY : Deck.o
 
@@ -259,6 +283,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... unogame"
+	@echo "... CardGame.o"
+	@echo "... CardGame.i"
+	@echo "... CardGame.s"
 	@echo "... Deck.o"
 	@echo "... Deck.i"
 	@echo "... Deck.s"

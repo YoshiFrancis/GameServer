@@ -3,6 +3,11 @@
 
 static void handleResponse(message& msg, conn_ptr conn);
 
+Hub::Hub(std::vector<Application*>& applications)
+	: applications_{ applications }
+{
+}
+
 void Hub::join(conn_ptr conn)  
 {
 	Room::join(conn);
@@ -147,7 +152,7 @@ void Hub::handleCommand(message& msg, conn_ptr conn)
 	else if (msg.body().substr(0, 7) == "/create")
 	{
 		std::string lobby_id = msg.body().substr(8, msg.body_length());
-		lobbies_.emplace_back(  *this, lobby_id, applications_[0].app );
+		lobbies_.emplace_back(  *this, lobby_id, applications_[0]->createApplication() );
 		joinLobby(lobbies_.back(), conn);
 		alert("New lobby has been created by " + conn->getUsername() + " called " + lobby_id);
 		// create lobby

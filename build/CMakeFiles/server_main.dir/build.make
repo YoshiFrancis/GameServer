@@ -92,7 +92,9 @@ server_main_EXTERNAL_OBJECTS =
 
 server_main: CMakeFiles/server_main.dir/server_main.cpp.o
 server_main: CMakeFiles/server_main.dir/build.make
+server_main: Card-Game/src/libunogame.a
 server_main: src/libserver.a
+server_main: Card-Game/libhelper.a
 server_main: CMakeFiles/server_main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable server_main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server_main.dir/link.txt --verbose=$(VERBOSE)

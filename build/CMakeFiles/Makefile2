@@ -189,14 +189,16 @@ src/clean: src/CMakeFiles/client.dir/clean
 
 # All Build rule for target.
 CMakeFiles/server_main.dir/all: src/CMakeFiles/server.dir/all
+CMakeFiles/server_main.dir/all: Card-Game/CMakeFiles/helper.dir/all
+CMakeFiles/server_main.dir/all: Card-Game/src/CMakeFiles/unogame.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server_main.dir/build.make CMakeFiles/server_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server_main.dir/build.make CMakeFiles/server_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=91,92 "Built target server_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=91 "Built target server_main"
 .PHONY : CMakeFiles/server_main.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/server_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/server_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 0
 .PHONY : CMakeFiles/server_main.dir/rule
@@ -217,12 +219,12 @@ CMakeFiles/server_main.dir/clean:
 CMakeFiles/client_main.dir/all: src/CMakeFiles/client.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client_main.dir/build.make CMakeFiles/client_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client_main.dir/build.make CMakeFiles/client_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=82,83 "Built target client_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=82 "Built target client_main"
 .PHONY : CMakeFiles/client_main.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/client_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/client_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 0
 .PHONY : CMakeFiles/client_main.dir/rule
@@ -295,12 +297,12 @@ src/CMakeFiles/client.dir/clean:
 Card-Game/CMakeFiles/helper.dir/all:
 	$(MAKE) $(MAKESILENT) -f Card-Game/CMakeFiles/helper.dir/build.make Card-Game/CMakeFiles/helper.dir/depend
 	$(MAKE) $(MAKESILENT) -f Card-Game/CMakeFiles/helper.dir/build.make Card-Game/CMakeFiles/helper.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=84 "Built target helper"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=83,84 "Built target helper"
 .PHONY : Card-Game/CMakeFiles/helper.dir/all
 
 # Build rule for subdir invocation for target.
 Card-Game/CMakeFiles/helper.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Card-Game/CMakeFiles/helper.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 0
 .PHONY : Card-Game/CMakeFiles/helper.dir/rule
@@ -322,12 +324,12 @@ Card-Game/src/CMakeFiles/unogame.dir/all: src/CMakeFiles/server.dir/all
 Card-Game/src/CMakeFiles/unogame.dir/all: Card-Game/CMakeFiles/helper.dir/all
 	$(MAKE) $(MAKESILENT) -f Card-Game/src/CMakeFiles/unogame.dir/build.make Card-Game/src/CMakeFiles/unogame.dir/depend
 	$(MAKE) $(MAKESILENT) -f Card-Game/src/CMakeFiles/unogame.dir/build.make Card-Game/src/CMakeFiles/unogame.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=96,97,98,99,100 "Built target unogame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=95,96,97,98,99,100 "Built target unogame"
 .PHONY : Card-Game/src/CMakeFiles/unogame.dir/all
 
 # Build rule for subdir invocation for target.
 Card-Game/src/CMakeFiles/unogame.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Card-Game/src/CMakeFiles/unogame.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 0
 .PHONY : Card-Game/src/CMakeFiles/unogame.dir/rule
@@ -352,12 +354,12 @@ Card-Game/tests/CMakeFiles/test_local.dir/all: _deps/catch2-build/src/CMakeFiles
 Card-Game/tests/CMakeFiles/test_local.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all
 	$(MAKE) $(MAKESILENT) -f Card-Game/tests/CMakeFiles/test_local.dir/build.make Card-Game/tests/CMakeFiles/test_local.dir/depend
 	$(MAKE) $(MAKESILENT) -f Card-Game/tests/CMakeFiles/test_local.dir/build.make Card-Game/tests/CMakeFiles/test_local.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=94,95 "Built target test_local"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=94 "Built target test_local"
 .PHONY : Card-Game/tests/CMakeFiles/test_local.dir/all
 
 # Build rule for subdir invocation for target.
 Card-Game/tests/CMakeFiles/test_local.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 93
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 94
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Card-Game/tests/CMakeFiles/test_local.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 0
 .PHONY : Card-Game/tests/CMakeFiles/test_local.dir/rule
@@ -380,12 +382,12 @@ Card-Game/tests/CMakeFiles/test_helper.dir/all: _deps/catch2-build/src/CMakeFile
 Card-Game/tests/CMakeFiles/test_helper.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all
 	$(MAKE) $(MAKESILENT) -f Card-Game/tests/CMakeFiles/test_helper.dir/build.make Card-Game/tests/CMakeFiles/test_helper.dir/depend
 	$(MAKE) $(MAKESILENT) -f Card-Game/tests/CMakeFiles/test_helper.dir/build.make Card-Game/tests/CMakeFiles/test_helper.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=93 "Built target test_helper"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=92,93 "Built target test_helper"
 .PHONY : Card-Game/tests/CMakeFiles/test_helper.dir/all
 
 # Build rule for subdir invocation for target.
 Card-Game/tests/CMakeFiles/test_helper.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 81
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 83
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Card-Game/tests/CMakeFiles/test_helper.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 0
 .PHONY : Card-Game/tests/CMakeFiles/test_helper.dir/rule
@@ -406,12 +408,12 @@ Card-Game/tests/CMakeFiles/test_helper.dir/clean:
 _deps/catch2-build/src/CMakeFiles/Catch2.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78 "Built target Catch2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77 "Built target Catch2"
 .PHONY : _deps/catch2-build/src/CMakeFiles/Catch2.dir/all
 
 # Build rule for subdir invocation for target.
 _deps/catch2-build/src/CMakeFiles/Catch2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 78
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 77
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/catch2-build/src/CMakeFiles/Catch2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fozua/Desktop/GameServer/build/CMakeFiles 0
 .PHONY : _deps/catch2-build/src/CMakeFiles/Catch2.dir/rule
@@ -432,7 +434,7 @@ _deps/catch2-build/src/CMakeFiles/Catch2.dir/clean:
 _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=79 "Built target Catch2WithMain"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=78,79 "Built target Catch2WithMain"
 .PHONY : _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all
 
 # Build rule for subdir invocation for target.

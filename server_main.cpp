@@ -14,10 +14,11 @@ int main(int argc, char* argv[])
       std::cout << "Usage: <port>\n";
     }
 
-		ApplicationType UnoGame { CardGame(), "Uno Game" };
+		CardGame cardgame;
+		std::vector<Application*> applications { &cardgame };
     asio::io_context io_context;
     tcp::endpoint endpoint(tcp::v4(), std::atoi(argv[1]));
-    Server server(io_context, endpoint, { UnoGame } );
+    Server server(io_context, endpoint, applications );
     io_context.run();
   }
   catch(const std::exception& e)

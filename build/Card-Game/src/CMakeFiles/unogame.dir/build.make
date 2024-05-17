@@ -139,13 +139,28 @@ Card-Game/src/CMakeFiles/unogame.dir/PlayerContainer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unogame.dir/PlayerContainer.cpp.s"
 	cd /Users/fozua/Desktop/GameServer/build/Card-Game/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fozua/Desktop/GameServer/Card-Game/src/PlayerContainer.cpp -o CMakeFiles/unogame.dir/PlayerContainer.cpp.s
 
+Card-Game/src/CMakeFiles/unogame.dir/CardGame.cpp.o: Card-Game/src/CMakeFiles/unogame.dir/flags.make
+Card-Game/src/CMakeFiles/unogame.dir/CardGame.cpp.o: /Users/fozua/Desktop/GameServer/Card-Game/src/CardGame.cpp
+Card-Game/src/CMakeFiles/unogame.dir/CardGame.cpp.o: Card-Game/src/CMakeFiles/unogame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object Card-Game/src/CMakeFiles/unogame.dir/CardGame.cpp.o"
+	cd /Users/fozua/Desktop/GameServer/build/Card-Game/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Card-Game/src/CMakeFiles/unogame.dir/CardGame.cpp.o -MF CMakeFiles/unogame.dir/CardGame.cpp.o.d -o CMakeFiles/unogame.dir/CardGame.cpp.o -c /Users/fozua/Desktop/GameServer/Card-Game/src/CardGame.cpp
+
+Card-Game/src/CMakeFiles/unogame.dir/CardGame.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/unogame.dir/CardGame.cpp.i"
+	cd /Users/fozua/Desktop/GameServer/build/Card-Game/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fozua/Desktop/GameServer/Card-Game/src/CardGame.cpp > CMakeFiles/unogame.dir/CardGame.cpp.i
+
+Card-Game/src/CMakeFiles/unogame.dir/CardGame.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/unogame.dir/CardGame.cpp.s"
+	cd /Users/fozua/Desktop/GameServer/build/Card-Game/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fozua/Desktop/GameServer/Card-Game/src/CardGame.cpp -o CMakeFiles/unogame.dir/CardGame.cpp.s
+
 # Object files for target unogame
 unogame_OBJECTS = \
 "CMakeFiles/unogame.dir/Hand.cpp.o" \
 "CMakeFiles/unogame.dir/Player.cpp.o" \
 "CMakeFiles/unogame.dir/UnoCard.cpp.o" \
 "CMakeFiles/unogame.dir/Deck.cpp.o" \
-"CMakeFiles/unogame.dir/PlayerContainer.cpp.o"
+"CMakeFiles/unogame.dir/PlayerContainer.cpp.o" \
+"CMakeFiles/unogame.dir/CardGame.cpp.o"
 
 # External object files for target unogame
 unogame_EXTERNAL_OBJECTS =
@@ -155,9 +170,10 @@ Card-Game/src/libunogame.a: Card-Game/src/CMakeFiles/unogame.dir/Player.cpp.o
 Card-Game/src/libunogame.a: Card-Game/src/CMakeFiles/unogame.dir/UnoCard.cpp.o
 Card-Game/src/libunogame.a: Card-Game/src/CMakeFiles/unogame.dir/Deck.cpp.o
 Card-Game/src/libunogame.a: Card-Game/src/CMakeFiles/unogame.dir/PlayerContainer.cpp.o
+Card-Game/src/libunogame.a: Card-Game/src/CMakeFiles/unogame.dir/CardGame.cpp.o
 Card-Game/src/libunogame.a: Card-Game/src/CMakeFiles/unogame.dir/build.make
 Card-Game/src/libunogame.a: Card-Game/src/CMakeFiles/unogame.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libunogame.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/fozua/Desktop/GameServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libunogame.a"
 	cd /Users/fozua/Desktop/GameServer/build/Card-Game/src && $(CMAKE_COMMAND) -P CMakeFiles/unogame.dir/cmake_clean_target.cmake
 	cd /Users/fozua/Desktop/GameServer/build/Card-Game/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/unogame.dir/link.txt --verbose=$(VERBOSE)
 

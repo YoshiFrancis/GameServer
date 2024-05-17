@@ -1275,4 +1275,15 @@ CMakeFiles/server_main.dir/server_main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__tree \
   /Users/fozua/Desktop/GameServer/include/lobby.h \
   /Users/fozua/Desktop/GameServer/include/application.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/iostream
+  /Users/fozua/Desktop/GameServer/Card-Game/include/CardGame.h \
+  /Users/fozua/Desktop/GameServer/Card-Game/include/PlayerContainer.h \
+  /Users/fozua/Desktop/GameServer/Card-Game/include/IPlayerContainer.h \
+  /Users/fozua/Desktop/GameServer/Card-Game/include/Player.h \
+  /Users/fozua/Desktop/GameServer/Card-Game/include/IPlayer.h \
+  /Users/fozua/Desktop/GameServer/Card-Game/include/ICard.h \
+  /Users/fozua/Desktop/GameServer/Card-Game/include/Hand.h \
+  /Users/fozua/Desktop/GameServer/Card-Game/include/IHand.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/iostream \
+  /Users/fozua/Desktop/GameServer/Card-Game/include/Deck.h \
+  /Users/fozua/Desktop/GameServer/Card-Game/include/IDeck.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/deque

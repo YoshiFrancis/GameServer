@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/unogame.dir/CardGame.cpp.o"
+  "CMakeFiles/unogame.dir/CardGame.cpp.o.d"
   "CMakeFiles/unogame.dir/Deck.cpp.o"
   "CMakeFiles/unogame.dir/Deck.cpp.o.d"
   "CMakeFiles/unogame.dir/Hand.cpp.o"

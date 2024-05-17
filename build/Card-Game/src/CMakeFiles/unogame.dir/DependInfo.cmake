@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/fozua/Desktop/GameServer/Card-Game/src/CardGame.cpp" "Card-Game/src/CMakeFiles/unogame.dir/CardGame.cpp.o" "gcc" "Card-Game/src/CMakeFiles/unogame.dir/CardGame.cpp.o.d"
   "/Users/fozua/Desktop/GameServer/Card-Game/src/Deck.cpp" "Card-Game/src/CMakeFiles/unogame.dir/Deck.cpp.o" "gcc" "Card-Game/src/CMakeFiles/unogame.dir/Deck.cpp.o.d"
   "/Users/fozua/Desktop/GameServer/Card-Game/src/Hand.cpp" "Card-Game/src/CMakeFiles/unogame.dir/Hand.cpp.o" "gcc" "Card-Game/src/CMakeFiles/unogame.dir/Hand.cpp.o.d"
   "/Users/fozua/Desktop/GameServer/Card-Game/src/Player.cpp" "Card-Game/src/CMakeFiles/unogame.dir/Player.cpp.o" "gcc" "Card-Game/src/CMakeFiles/unogame.dir/Player.cpp.o.d"

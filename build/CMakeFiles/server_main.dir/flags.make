@@ -4,7 +4,7 @@
 # compile CXX with /Library/Developer/CommandLineTools/usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/fozua/Documents/ASIO/asio-1.30.2/include -I/Users/fozua/Desktop/GameServer/include
+CXX_INCLUDES = -I/Users/fozua/Documents/ASIO/asio-1.30.2/include -I/Users/fozua/Desktop/GameServer/include -I/Users/fozua/Desktop/GameServer/Card-Game/include -I/Users/fozua/Desktop/GameServer/Card-Game/helper.h
 
 CXX_FLAGSarm64 = -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.5
 

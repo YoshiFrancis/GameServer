@@ -3,6 +3,7 @@
 
 #include "room.h"
 #include "lobby.h"
+#include "application.h"
 #include <set>
 #include <vector>
 #include <memory>
@@ -17,21 +18,12 @@ deliver
 
 class Lobby;
 
-struct ApplicationType 
-{
-	Application& app;
-	std::string description;
-};
-
 class Hub : public Room
 {
 
 public:
 	
-	Hub(std::vector<ApplicationType>& applications) 
-		: applications_ { applications }
-	{
-	}
+	Hub(std::vector<Application*>& applications);
 
 	Lobby* findLobby(std::string id);
 	void joinLobby(Lobby& lobby, conn_ptr conn);
@@ -47,7 +39,7 @@ private:
 	std::set<std::string> usernames_;
 	std::set<conn_ptr> lobbiless_conns;
 	std::vector<Lobby> lobbies_;
-	std::vector<ApplicationType> applications_;
+	std::vector<Application*> applications_;
 	// inherits std::set<conn_ptr> connections_ from room
 
 	bool doesUsernameExist(std::string name) const;

@@ -14,7 +14,7 @@ target_link_libraries(unogame PUBLIC server)
 
 add_executable(server_main server_main.cpp)
 add_executable(client_main client_main.cpp)
-target_link_libraries(server_main PUBLIC server)
+target_link_libraries(server_main PUBLIC server unogame)
 target_link_libraries(client_main PUBLIC client)
 
 
