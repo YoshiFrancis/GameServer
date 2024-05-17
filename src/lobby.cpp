@@ -27,7 +27,7 @@ void Lobby::leave(conn_ptr conn)
 
 void Lobby::startApp()
 {
-	app_->start();
+	app_->start(connections_);
 	hasStarted_ = true;
 }
 
@@ -76,6 +76,7 @@ void Lobby::handleCommand(message& msg, conn_ptr conn)
 	{
 		// ....
 		alert("Starting game!");
+		startApp();
 	}
 	else if (msg.body().substr(0, 6) == "/leave")
 	{
@@ -87,7 +88,7 @@ std::string Lobby::getRoomInfo()
 {
 	std::string info_string{};
 	info_string += Room::getRoomInfo();
-	info_string += "\nGame type: Chat Server";
+	info_string += "\nGame type: " + app_->getDescription();
 	info_string += "\nList of usernames of connections: ";
 	std::for_each(usernames_.begin(), usernames_.end(), [&info_string](std::string username) { info_string += username + ", "; });
 	return info_string;
