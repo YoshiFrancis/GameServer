@@ -788,4 +788,6 @@ Card-Game/src/CMakeFiles/unogame.dir/CardGame.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/cstdarg \
   /Users/fozua/Desktop/GameServer/Card-Game/include/Deck.h \
   /Users/fozua/Desktop/GameServer/Card-Game/include/IDeck.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/deque
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/deque \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/cassert \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/assert.h

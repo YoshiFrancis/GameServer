@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <thread>
 
 
 std::string Lobby::getId() const
@@ -19,16 +20,23 @@ void Lobby::join(conn_ptr conn)
 
 void Lobby::leave(conn_ptr conn) 
 {
-	Room::leave(conn);
 	usernames_.erase(conn->getUsername());
 	alert(conn->getUsername() + " is leaving the lobby!\n");
+	conn->changeRoom(&hub_);
 	// app_->leave(conn);
 }
 
 void Lobby::startApp()
 {
-	app_->start(connections_);
+	std::thread application_thread(
+		[&]()
+		{
+			app_->start(connections_);
+		});
+	alert("Gekki");
 	hasStarted_ = true;
+	application_thread.join();
+	//endApp();
 }
 
 void Lobby::endApp()

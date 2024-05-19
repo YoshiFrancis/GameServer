@@ -22,8 +22,9 @@ class Lobby : public Room
 
 public:
 	Lobby(  Hub& hub, std::string id, Application* app)
-		: hub_ { hub }, id_ { id }, app_ { app }
+		: hub_ { hub }, id_ { id }
 	{
+		app_ = app->createApplication(this);
 	}
 
 public:

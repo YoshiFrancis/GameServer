@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
       std::cout << "Usage: <port>\n";
     }
 
-		CardGame cardgame;
+		CardGame cardgame { nullptr };
 		std::vector<Application*> applications { &cardgame };
     asio::io_context io_context;
     tcp::endpoint endpoint(tcp::v4(), std::atoi(argv[1]));
