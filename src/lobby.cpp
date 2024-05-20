@@ -22,8 +22,7 @@ void Lobby::leave(conn_ptr conn)
 {
 	usernames_.erase(conn->getUsername());
 	alert(conn->getUsername() + " is leaving the lobby!\n");
-	conn->changeRoom(&hub_);
-	// app_->leave(conn);
+	Room::leave(conn);
 }
 
 void Lobby::startApp()
@@ -31,7 +30,6 @@ void Lobby::startApp()
 	std::thread application_thread(
 		[&]()
 		{
-			std::cout << "starting app...";
 			app_->start(connections_);
 		});
 	hasStarted_ = true;

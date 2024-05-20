@@ -81,7 +81,6 @@ void Connection::Write()
   {
 		if (!ec)
 		{
-			std::cout << "MEssage sent succesfully!\n";
 			messageQ_.pop_front();
 			if (!messageQ_.empty())
 			{
