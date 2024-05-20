@@ -1,2 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libunogame.a CMakeFiles/unogame.dir/Hand.cpp.o CMakeFiles/unogame.dir/Player.cpp.o CMakeFiles/unogame.dir/UnoCard.cpp.o CMakeFiles/unogame.dir/Deck.cpp.o CMakeFiles/unogame.dir/PlayerContainer.cpp.o CMakeFiles/unogame.dir/CardGame.cpp.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libunogame.a
