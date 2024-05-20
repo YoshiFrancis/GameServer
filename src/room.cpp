@@ -25,7 +25,7 @@ void Room::leave(conn_ptr conn)
 void Room::deliverAll(message& msg, conn_ptr conn_sender)
 {
     msg.encode_header();
-    std::cout << connections_.size() << " number of connections to send to\n";
+    //std::cout << msg.body() << ": " << connections_.size() << " number of connections to send to\n";
     for (auto conn : connections_)
     {
 			if (conn->isPrompt("None") && conn != conn_sender)

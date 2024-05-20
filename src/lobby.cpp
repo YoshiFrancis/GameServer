@@ -31,9 +31,9 @@ void Lobby::startApp()
 	std::thread application_thread(
 		[&]()
 		{
+			std::cout << "starting app...";
 			app_->start(connections_);
 		});
-	alert("Gekki");
 	hasStarted_ = true;
 	application_thread.join();
 	//endApp();
@@ -114,6 +114,6 @@ std::string Lobby::getCommands()
 
 void Lobby::alert(std::string conn_msg)
 {
-	message newMsg { conn_msg, 'M' };
-	deliverAll(newMsg);
+	message alert_msg { "Lobby: " + conn_msg, 'M' };
+	deliverAll(alert_msg);
 }

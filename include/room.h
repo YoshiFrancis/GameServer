@@ -20,7 +20,7 @@ public:
 		virtual void alert(std::string message);
 
 protected:
-		Room(std::set<conn_ptr> conns) : connections_ (conns) {}
+		Room(std::set<conn_ptr>& conns) : connections_ (conns) {}
     std::set<conn_ptr> connections_;
 };
 
