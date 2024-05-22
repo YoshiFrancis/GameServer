@@ -26,8 +26,7 @@ void Connection::changeRoom(Room* room)
 void Connection::deliver(message msg)
 {
   bool is_curr_writing = !messageQ_.empty();
-  messageQ_.push_back(msg);
-  if (!is_curr_writing)
+  messageQ_.push_back(msg); if (!is_curr_writing)
   {
     Write();
   }
@@ -107,10 +106,16 @@ void Connection::setUsername(std::string username)
 
 void Connection::setPrompt(std::string prompt)
 {
+	std::cout << "Changing prompt of " << getUsername() << " to " << prompt << "\n";
 	curr_prompt_ = prompt;
 }
 
 bool Connection::isPrompt(std::string prompt)
 {
 	return prompt == curr_prompt_;
+}
+
+std::string Connection::getPrompt()
+{
+	return curr_prompt_;
 }

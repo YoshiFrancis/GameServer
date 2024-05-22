@@ -16,6 +16,7 @@ public:
 		virtual void setUsername(std::string name) = 0;
 		virtual void setPrompt(std::string prompt) = 0;
 		virtual bool isPrompt(std::string prompt) = 0;
+		virtual std::string getPrompt() = 0;
 };
 
 typedef std::shared_ptr<ConnectionI> conn_ptr;

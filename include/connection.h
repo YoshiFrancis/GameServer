@@ -19,6 +19,7 @@ public:
 		void setUsername(std::string) override;
 		void setPrompt(std::string prompt) override;
 		bool isPrompt(std::string prompt) override;
+		std::string getPrompt() override;
 
 private:
     tcp::socket socket_;
