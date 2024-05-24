@@ -18,6 +18,7 @@ public:
 		virtual std::string getRoomInfo();
 		virtual std::string getCommands();
 		virtual void alert(std::string message);
+		virtual void signalRoomTermination();
 
 protected:
 		Room(std::set<conn_ptr>& conns) : connections_ (conns) {}

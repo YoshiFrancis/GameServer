@@ -32,6 +32,7 @@ public:
 	void join(conn_ptr conn) override;
 	void leave(conn_ptr conn) override;
 	void handleMessage(message& msg, conn_ptr conn) override;
+	void signalRoomTermination() override;
 	void end();
 
 private:

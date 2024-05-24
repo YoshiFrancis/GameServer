@@ -15,6 +15,7 @@ public:
 	virtual void end() = 0;
 	virtual Application* createApplication(Room* room) = 0;
 	virtual std::string getDescription() = 0;
+	virtual void reset() = 0;
 	void leave(conn_ptr conn) override;
 
 protected:

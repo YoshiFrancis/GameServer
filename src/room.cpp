@@ -81,3 +81,8 @@ void Room::alert(std::string conn_msg)
 	message alert_msg { "Server: " + conn_msg, 'M' };
 	deliverAll(alert_msg);
 }
+
+void Room::signalRoomTermination() 
+{
+	std::cout << "nothing\n";
+}

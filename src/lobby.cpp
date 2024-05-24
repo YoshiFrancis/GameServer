@@ -23,7 +23,7 @@ void Lobby::leave(conn_ptr conn)
 	usernames_.erase(conn->getUsername());
 	alert(conn->getUsername() + " is leaving the lobby!\n");
 	Room::leave(conn);
-	if (connections_.empty())
+	if (connections_.empty() && !hasStarted_)
 	{
 		hub_.removeLobby(this);
 	}
@@ -47,6 +47,11 @@ void Lobby::end()
 	deliverAll(ending_msg);
 	std::for_each(connections_.begin(), connections_.end(), [this](conn_ptr conn) { leave(conn); });
 	free(app_);
+}
+
+void Lobby::signalRoomTermination() 
+{
+	hasStarted_ = false;
 }
 
 void Lobby::closeLobby()
@@ -87,6 +92,8 @@ void Lobby::handleCommand(message& msg, conn_ptr conn)
 	{
 		// ....
 		alert("Starting game!");
+		hasStarted_ = false;
+		app_->reset();
 		startApp();
 	}
 	else if (msg.body().substr(0, 6) == "/leave")
