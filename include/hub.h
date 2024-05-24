@@ -6,6 +6,7 @@
 #include "application.h"
 #include <set>
 #include <vector>
+#include <list>
 #include <memory>
 
 /*
@@ -28,6 +29,7 @@ public:
 	Lobby* findLobby(std::string id);
 	void joinLobby(Lobby& lobby, conn_ptr conn);
 	void joinLobby(Lobby* lobby, conn_ptr conn);
+	void removeLobby(Lobby* lobyy);
 	void join(conn_ptr conn) override;
 	void leave(conn_ptr conn) override;
 	void deliverAll(message& msg, conn_ptr conn_sender=nullptr) override;
@@ -38,7 +40,7 @@ public:
 private:
 	std::set<std::string> usernames_;
 	std::set<conn_ptr> lobbiless_conns;
-	std::vector<Lobby> lobbies_;
+	std::list<Lobby> lobbies_;
 	std::vector<Application*> applications_;
 	// inherits std::set<conn_ptr> connections_ from room
 

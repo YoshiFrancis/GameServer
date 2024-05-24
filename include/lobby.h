@@ -32,6 +32,7 @@ public:
 	void join(conn_ptr conn) override;
 	void leave(conn_ptr conn) override;
 	void handleMessage(message& msg, conn_ptr conn) override;
+	void end();
 
 private:
 	std::set<std::string> usernames_;
@@ -43,7 +44,6 @@ private:
 	bool isClosed_ = false;
 
 	void startApp();
-	void endApp();
 	void closeLobby();
 	void handleCommand(message& msg, conn_ptr conn) override;
 	std::string getRoomInfo() override;

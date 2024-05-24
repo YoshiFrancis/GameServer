@@ -143,7 +143,16 @@ void Hub::handleCommand(message& msg, conn_ptr conn)
 	{
 		std::string lobby_id = msg.body().substr(6, msg.body_length());
 		auto lobby = findLobby(lobby_id);
-		joinLobby(*lobby, conn);
+		if (lobby != nullptr) 
+		{
+			joinLobby(*lobby, conn);
+		} 
+		else 
+		{
+			message error_msg { "Invalid lobby!", 'M' };
+			error_msg.encode_header();
+			conn->deliver(error_msg);
+		}
 	}
 	else if (msg.body().substr(0, 6) == "/leave")
 	{
@@ -186,4 +195,15 @@ void Hub::alert(std::string conn_msg)
 {
 	message newMsg { conn_msg, 'M' };
 	deliverAll(newMsg);
+}
+
+void Hub::removeLobby(Lobby* lobbyToRemove) 
+{
+	lobbyToRemove->end();
+	auto lobbyIt = std::find_if(lobbies_.begin(), lobbies_.end(), 
+		[&](Lobby& lobby) 
+		{
+			return lobby.getId() == lobbyToRemove->getId();
+		});
+	lobbies_.erase(lobbyIt);
 }

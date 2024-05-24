@@ -23,6 +23,10 @@ void Lobby::leave(conn_ptr conn)
 	usernames_.erase(conn->getUsername());
 	alert(conn->getUsername() + " is leaving the lobby!\n");
 	Room::leave(conn);
+	if (connections_.empty())
+	{
+		hub_.removeLobby(this);
+	}
 }
 
 void Lobby::startApp()
@@ -34,14 +38,15 @@ void Lobby::startApp()
 		});
 	hasStarted_ = true;
 	application_thread.join();
-	//endApp();
 }
 
-void Lobby::endApp()
+void Lobby::end()
 {
-	message msg { "Ending game"};
-	deliverAll(msg);
+	message ending_msg { "Ending lobby"};
+	ending_msg.encode_header();
+	deliverAll(ending_msg);
 	std::for_each(connections_.begin(), connections_.end(), [this](conn_ptr conn) { leave(conn); });
+	free(app_);
 }
 
 void Lobby::closeLobby()
