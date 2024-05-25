@@ -14,15 +14,15 @@ public:
     virtual void leave(conn_ptr conn);
     virtual void deliverAll(message& msg, conn_ptr conn_sender = nullptr);
 		virtual void handleMessage(message& msg, conn_ptr conn);
-		virtual void handleCommand(message& msg, conn_ptr conn);
 		virtual std::string getRoomInfo();
 		virtual std::string getCommands();
-		virtual void alert(std::string message);
+		virtual void alert(const std::string& message);
 		virtual void signalRoomTermination();
 
 protected:
 		Room(std::set<conn_ptr>& conns) : connections_ (conns) {}
     std::set<conn_ptr> connections_;
+		Room* return_room_ = nullptr;
 };
 
 #endif

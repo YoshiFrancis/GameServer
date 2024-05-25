@@ -1,7 +1,4 @@
 #include "hub.h"
-#include <iostream>
-
-static void handleResponse(message& msg, conn_ptr conn);
 
 Hub::Hub(std::vector<Application*>& applications)
 	: applications_{ applications }
@@ -61,18 +58,16 @@ Lobby* Hub::findLobby(std::string id)
 void Hub::joinLobby(Lobby& lobby, conn_ptr conn)
 {
 	conn->changeRoom(&lobby);
-	std::cout << "Connection has changed room\n";
 	lobbiless_conns.erase(conn);
 }
 
 void Hub::joinLobby(Lobby* lobby, conn_ptr conn)
 {
 	conn->changeRoom(lobby);
-	std::cout << "Connectiong has joined lobby\n";
 	lobbiless_conns.erase(conn);
 }
 
-bool Hub::doesUsernameExist(std::string name) const 
+bool Hub::doesUsernameExist(std::string name)
 {
 	if (usernames_.find(name) == usernames_.end())
 		return false;
@@ -117,7 +112,6 @@ void Hub::handleResponse(message& msg, conn_ptr conn)
 		{
 			conn->setUsername(username);
 			usernames_.insert(username);
-			std::cout << conn->getUsername() << " has joined the hub!\n";
 			conn->setPrompt("None");
 			alert(conn->getUsername() + " has declared himself!");
 		}
@@ -164,7 +158,6 @@ void Hub::handleCommand(message& msg, conn_ptr conn)
 		lobbies_.emplace_back(  *this, lobby_id, applications_[0] );
 		joinLobby(lobbies_.back(), conn);
 		alert("New lobby has been created by " + conn->getUsername() + " called " + lobby_id);
-		// create lobby
 	}
 }
 
