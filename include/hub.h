@@ -47,7 +47,7 @@ private:
 	void joinLobby(Lobby* lobby, conn_ptr conn);
 	void promptConnUsername(conn_ptr conn);
 	bool doesUsernameExist(std::string name);
-	void handleCommand(message& msg, conn_ptr conn);
+	void handleCommand(message& msg, conn_ptr conn) override;
 	void handleResponse(message& msg, conn_ptr conn);
 };
 

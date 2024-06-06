@@ -49,11 +49,6 @@ void Lobby::end()
 	free(app_);
 }
 
-void Lobby::signalRoomTermination() 
-{
-	hasStarted_ = false;
-}
-
 void Lobby::closeLobby()
 {
 	message msg { "Closing lobby. No one can join anymore." };
