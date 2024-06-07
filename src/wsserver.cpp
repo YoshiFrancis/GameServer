@@ -1,14 +1,15 @@
 #include "WsServer.h"
 
-WsServer::WsServer() {
+WsServer::WsServer(Hub& hub) : hub_ { hub }
+{
 	server_.set_access_channels(websocketpp::log::alevel::all);
 	server_.clear_access_channels(websocketpp::log::alevel::frame_payload);
 	
 	server_.init_asio();
 
-	server_.set_message_handler(&on_message, this, ::_1, ::_2);
-	server_.set_open_handler(&on_open, this, ::_1);
-	server_.set_close_handler(&on_close, this, ::_1);
+	server_.set_message_handler(bind(&WsServer::on_message, this, ::_1, ::_2));
+	server_.set_open_handler(bind(&WsServer::on_open, this, ::_1));
+	server_.set_close_handler(bind(&WsServer::on_close, this, ::_1));
 
 }
 
@@ -28,6 +29,7 @@ void WsServer::on_close(connection_hdl hdl) {
 }
 
 void WsServer::on_open(connection_hdl hdl) {
-	wsconnection wsconn {  *this, hdl, &hub_ }l
+	std::shared_ptr<wsconnection> wsconn = std::make_shared<wsconnection>( *this, hdl, &hub_ );
+	wsconn->start();
 	connections_[hdl] = wsconn;
 }
