@@ -31,4 +31,6 @@ private:
 	void on_message(connection_hdl hdl, server::message_ptr msg);
 	void on_open(connection_hdl hdl);
 	void on_close(connection_hdl hdl);
-}
+};
+
+#endif

@@ -2,10 +2,16 @@
 #define WSCONNECTION_H
 
 #include "ConnectionI.hpp"
+#include <websocketpp/config/asio_no_tls.hpp>
+#include <websocketpp/server.hpp>
 #include "WsServer.h"
 #include <memory>
 
-class wsconnection : public ConnectionI, public enable_shared_from_this<wsconnection>
+class WsServer;
+
+using websocketpp::connection_hdl;
+
+class wsconnection : public ConnectionI, public std::enable_shared_from_this<wsconnection>
 {
 
 public:

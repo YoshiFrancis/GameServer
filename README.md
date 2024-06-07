@@ -37,4 +37,6 @@ One Server --> One Hub --> to many lobbies (each player can only be in one lobby
 
 
 	## CURRENT WORK
-	- implementing lobby functionality
+	- need to work on wsconnection
+	- need to move many of the repeatable functions in the regular Connection to ConnectionI so wsconnection has access
+	- need to build webrowser or find some way to test code
