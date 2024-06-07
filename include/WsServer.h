@@ -19,13 +19,16 @@ using asio::ip::tcp;
 
 typedef websocketpp::server<websocketpp::config::asio> server;
 
+class wsconnection;
+
 class WsServer {
 	
 public:
 	WsServer(Hub& hub);
 	void run(uint16_t port);
+	void deliver(connection_hdl hdl, std::string msg);
 	
-	typedef std::map<connection_hdl,std::shared_ptr<wsconnection>> con_map;
+	typedef std::map<connection_hdl,std::shared_ptr<wsconnection>, std::owner_less<connection_hdl>> con_map;
 
 private:
 	server server_;

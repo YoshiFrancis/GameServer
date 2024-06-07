@@ -6,7 +6,7 @@ using asio::ip::tcp;
 
 
 Connection::Connection(tcp::socket socket, Room* room)
-  : socket_(std::move(socket)), room_(room), buffer_{"None", 'M'}
+  : socket_(std::move(socket)), buffer_{"None", 'M'}, ConnectionI(room)
 {
 }
 
@@ -14,13 +14,6 @@ void Connection::start()
 {
   room_->join(shared_from_this());
   ReadHeader();
-}
-
-void Connection::changeRoom(Room* room)
-{
-	room_->leave(shared_from_this());
-	room->join(shared_from_this());
-	room_ = room;
 }
 
 void Connection::deliver(message msg)
@@ -92,30 +85,4 @@ void Connection::Write()
 			room_->leave(shared_from_this());
 		}
   });
-}
-
-std::string Connection::getUsername()
-{
-	return username_;
-}
-
-void Connection::setUsername(std::string username)
-{
-	username_ = username;
-}
-
-void Connection::setPrompt(std::string prompt)
-{
-	std::cout << "Changing prompt of " << getUsername() << " to " << prompt << "\n";
-	curr_prompt_ = prompt;
-}
-
-bool Connection::isPrompt(std::string prompt)
-{
-	return prompt == curr_prompt_;
-}
-
-std::string Connection::getPrompt()
-{
-	return curr_prompt_;
 }

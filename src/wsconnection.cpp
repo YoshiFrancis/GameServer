@@ -1,14 +1,15 @@
 #include "wsconnection.h"
 
-wsconnection::wsconnection(WsServer& server, connection_hdl hdl, Room* room) : server_ { server }, hdl_ { hdl }, room_ { room }
+wsconnection::wsconnection(WsServer& server, connection_hdl hdl, Room* room) : server_ { server }, hdl_ { hdl }, ConnectionI { room }
 { }
 
 void wsconnection::deliver(message msg) {
-	server_.send(hdl, msg.data());
+	server_.deliver(hdl_, msg.data());
 }
 
-void wsconnection::rcvMsg(server::message_ptr msg) {
-	room_->handleMessage(msg->get_payload(), shared_from_this());
+void wsconnection::rcvMsg(std::string msg) {
+	message message { msg };
+	room_->handleMessage(message, shared_from_this());
 }
 
 void wsconnection::start() {

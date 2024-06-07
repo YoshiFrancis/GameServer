@@ -19,8 +19,16 @@ void WsServer::run(uint16_t port) {
 	server_.run();
 }
 
+void WsServer::deliver(connection_hdl hdl, std::string msg) {
+	websocketpp::lib::error_code ec;
+	server_.send(hdl, msg, websocketpp::frame::opcode::text, ec);
+	if (ec) {
+		std::cerr << "Error sending message: " << ec.message() << std::endl;
+	}
+}
+
 void WsServer::on_message(connection_hdl hdl, server::message_ptr msg) {
-	connections_[hdl]->rcvMsg(msg);
+	connections_[hdl]->rcvMsg(msg->get_payload());
 }
 
 void WsServer::on_close(connection_hdl hdl) {
