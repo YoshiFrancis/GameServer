@@ -1,19 +1,13 @@
 #include "ConnectionI.hpp"
+#include "asio.hpp"
 #include <iostream>
 #include <memory>
 
 using asio::ip::tcp;
 
 ConnectionI::ConnectionI(Room* room)
-  : socket_(std::move(socket)), room_(room), buffer_{"None", 'M'}
+  : room_(room)
 {
-}
-
-void ConnectionI::changeRoom(Room* room)
-{
-	room_->leave(shared_from_this());
-	room->join(shared_from_this());
-	room_ = room;
 }
 
 std::string ConnectionI::getUsername()

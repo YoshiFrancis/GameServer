@@ -7,13 +7,13 @@
 
 class Room;
 
-class ConnectionI 
+class ConnectionI  
 {
 public:
 		ConnectionI(Room* room);
     virtual ~ConnectionI() {}
     virtual void deliver(message msg) = 0;
-		virtual void changeRoom(Room* room);
+		virtual void changeRoom(Room* room) = 0;
 		virtual std::string getUsername();
 		virtual void setUsername(std::string name);
 		virtual void setPrompt(std::string prompt);

@@ -10,6 +10,13 @@ Connection::Connection(tcp::socket socket, Room* room)
 {
 }
 
+void Connection::changeRoom(Room* room)
+{
+	room_->leave(shared_from_this());
+	room->join(shared_from_this());
+	room_ = room;
+}
+
 void Connection::start()
 {
   room_->join(shared_from_this());

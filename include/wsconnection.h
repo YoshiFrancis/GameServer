@@ -18,6 +18,7 @@ class wsconnection : public ConnectionI, public std::enable_shared_from_this<wsc
 public:
 	wsconnection(WsServer& server, connection_hdl hdl, Room* room);
 	void deliver(message msg) override;
+	void changeRoom(Room* room) override;
 	void rcvMsg(std::string msg);
 	void start();
 

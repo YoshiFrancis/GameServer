@@ -12,6 +12,7 @@ class Connection : public std::enable_shared_from_this<Connection>, public Conne
 public:
     Connection(tcp::socket socket, Room* room);
     void deliver(message msg) override;
+		void changeRoom(Room* room) override;
     void start();
 		void joinRoom(Room& room);
 
