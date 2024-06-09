@@ -1,5 +1,6 @@
 #include "asio.hpp"
 #include "server.h"
+#include "WsServer.h"
 #include "CardGame.h"
 #include <iostream>
 
@@ -18,7 +19,10 @@ int main(int argc, char* argv[])
 		std::vector<Application*> applications { &cardgame };
     asio::io_context io_context;
     tcp::endpoint endpoint(tcp::v4(), std::atoi(argv[1]));
-    Server server(io_context, endpoint, applications );
+		Hub hub{ applications };
+    Server server(io_context, endpoint, hub);
+		WsServer wsserver(hub);
+		wsserver.run(3001);
     io_context.run();
   }
   catch(const std::exception& e)

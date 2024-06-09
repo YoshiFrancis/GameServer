@@ -37,6 +37,7 @@ void WsServer::on_close(connection_hdl hdl) {
 }
 
 void WsServer::on_open(connection_hdl hdl) {
+	std::cout << "hello world\n";
 	std::shared_ptr<wsconnection> wsconn = std::make_shared<wsconnection>( *this, hdl, &hub_ );
 	wsconn->start();
 	connections_[hdl] = wsconn;
