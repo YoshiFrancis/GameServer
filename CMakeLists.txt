@@ -6,7 +6,7 @@ project(testing
 				LANGUAGES CXX
 )
 
-include_directories(~/Documents/ASIO/asio-1.30.2/include include)
+include_directories(~/Documents/ASIO/asio-1.30.2/include ~/Documents/CppLib/websocketpp include)
 
 add_subdirectory(src)
 add_subdirectory(Card-Game)
