@@ -12,7 +12,8 @@ int main(int argc, char* argv[])
   {
     if (argc != 2)
     {
-      std::cout << "Usage: <port>\n";
+      std::cout << "Usage: <tcp port>\n";
+			return 0;
     }
 
 		CardGame cardgame { nullptr };
@@ -21,12 +22,12 @@ int main(int argc, char* argv[])
     tcp::endpoint endpoint(tcp::v4(), std::atoi(argv[1]));
 		Hub hub{ applications };
     Server server(io_context, endpoint, hub);
-		WsServer wsserver(hub);
-		wsserver.run(3001);
     io_context.run();
   }
   catch(const std::exception& e)
   {
     std::cerr << e.what() << '\n';
   }
+
+	return 1;
 }
